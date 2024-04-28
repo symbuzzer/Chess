@@ -89,6 +89,7 @@
     position: relative;
     padding-top: 10px;
     overflow: hidden;
+    font-family: 'Montserrat', sans-serif;    color: whitesmoke;
 }
 
 .WhitePiecesCaptured{
