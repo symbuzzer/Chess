@@ -720,7 +720,7 @@ function restart(){
     setPieces();
     drawBoard();
     resetPotentialChecks(Board);
-    makePopUp("Chess");
+    makePopUp("New Game");
     gameOver = false;
 }
 function chooseDifficulty(d){
