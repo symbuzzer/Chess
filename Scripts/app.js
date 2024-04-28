@@ -826,7 +826,7 @@ function makePopUp(event){
     let greenTheme = "<button onclick=setTheme('Green') class='greenButton'></button>";
     let br = "<br>";
 
-    let popUpBody = "<div class='PopUpBody'>" + popUpBodyText + whiteButton + blackButton + difficultyText + normal + tough + hard + themeText + brownTheme + blueTheme + greenTheme +br + br +  "</div>";
+    let popUpBody = "<div class='PopUpBody'>" + popUpBodyText + whiteButton + blackButton + difficultyText + normal + tough + hard + themeText + brownTheme + blueTheme + greenTheme +br + br + viewBoard+ "</div>";
 
 
     let popUp = "<div id='PopUp'>"+ popUpHeader + popUpBody +"</div>";
