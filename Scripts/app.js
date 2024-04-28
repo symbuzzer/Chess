@@ -1,5 +1,4 @@
-let theme = "Brown";
-
+let theme = "Green";
 
 let Board = {
 
