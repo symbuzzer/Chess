@@ -823,7 +823,7 @@ function makePopUp(event){
 
     let br = "<br>";
 
-    let popUpBody = "<div class='PopUpBody'>" + popUpBodyText + whiteButton + blackButton + difficultyText + normal + tough + hard +br + br + "</div>";
+    let popUpBody = "<div class='PopUpBody'>" + difficultyText + normal + tough + hard + popUpBodyText + whiteButton + blackButton +br + br + "</div>";
 
     let popUp = "<div id='PopUp'>"+ popUpHeader + popUpBody +"</div>";
     body.innerHTML += popUp;
