@@ -1,3 +1,5 @@
+aboutPopUp();
+
 let theme = "Green";
 
 let Board = {
