@@ -16,10 +16,11 @@
 </head>
 
 <body>
-
-    <div class="buttonsContainer">
-        <button class="restartButton" onclick="restartGame()">Restart</button>
-    </div>
+    <header class="Header">
+        <div class="buttonsContainer">
+            <button class="restartButton" onclick="restartGame()">Restart</button>
+        </div>
+    </header>
     
     <div class="Container">    
         <div id="Board">     
@@ -31,7 +32,7 @@
         <button class="drawButton" onclick="drawGame()">Draw</button>
     </div>
 
-    <nav style="position: relative; bottom: 0; width: 100%; left: 0; margin-top: 10vh; ">
+    <nav style="position: relative; bottom: 0; width: 100%; left: 0; ">
         <div class="CapturedPiecesContainer">   
             <h3>Captured Pieces</h3> 
             <div class="WhitePiecesCaptured"></div>
