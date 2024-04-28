@@ -821,14 +821,9 @@ function makePopUp(event){
     let tough = "<button onclick=chooseDifficulty(3) class='ChooseSideButton DifficultyButton' autofocus> Medium </button>";
     let hard = "<button onclick=chooseDifficulty(4) class='ChooseSideButton DifficultyButton'> Hard (Slow) </button>";
 
-    let themeText = "<h2 class='PopUpBodyText' style='margin-top: 8px;'>Choose Theme:</h2>";
-
-    let brownTheme = "<button onclick=setTheme('Brown') class='brownButton'></button>";
-    let blueTheme = "<button onclick=setTheme('Blue') class='blueButton'></button>";
-    let greenTheme = "<button onclick=setTheme('Green') class='greenButton'></button>";
     let br = "<br>";
 
-    let popUpBody = "<div class='PopUpBody'>" + popUpBodyText + whiteButton + blackButton + difficultyText + normal + tough + hard + themeText + brownTheme + blueTheme + greenTheme +br + br + "</div>";
+    let popUpBody = "<div class='PopUpBody'>" + popUpBodyText + whiteButton + blackButton + difficultyText + normal + tough + hard +br + br + "</div>";
 
     let popUp = "<div id='PopUp'>"+ popUpHeader + popUpBody +"</div>";
     body.innerHTML += popUp;
