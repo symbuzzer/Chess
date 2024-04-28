@@ -820,7 +820,7 @@ function makePopUp(event){
     let tough = "<button onclick=chooseDifficulty(3) class='ChooseSideButton DifficultyButton' autofocus> Medium </button>";
     let hard = "<button onclick=chooseDifficulty(4) class='ChooseSideButton DifficultyButton'> Hard (Slow) </button>";
     
-    let about = "<button onclick=aboutPopUp()class='generalButton'> About </button>;
+    let about = "<button onclick=aboutPopUp() class='generalButton'> About </button>;
 
     let br = "<br>";
 
