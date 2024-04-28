@@ -19,8 +19,7 @@
     font-family: 'Montserrat', sans-serif;
     color: whitesmoke;
     font-weight: 100;
-    margin-top: 50px;
-    position: fixed; /* Footer'ı sayfanın altında sabitler */
+    position: fixed; 
     left: 0;
     right: 0;
     bottom: 0;
