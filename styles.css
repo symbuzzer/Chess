@@ -80,19 +80,16 @@
     right: 0;
     margin-top:5vh;
     overflow: visible;
+    margin-bottom: 1.5em;
 }
 .CapturedPiecesContainer{
     display: block;
     height: 20vw;
     width: 40vw;
-    margin-left: auto;
-    margin-right: auto;
     position: relative;
     padding-top: 10px;
     overflow: hidden;
-    font-family: 'Montserrat', sans-serif;    color: whitesmoke;
-    left: 0;
-    right: 0;
+    margin-bottom: 1.5em;
 }
 
 .WhitePiecesCaptured{
@@ -265,11 +262,12 @@
 }
 
 .buttonsContainer{
-    display: flex; /* Flexbox modelini kullan */
-    justify-content: center; /* Yatay olarak içerikleri merkeze al */
-    width: 75%; /* Genişliği belirle */
-    padding-top: 25px; /* Üstten boşluk ekle */
-    margin: auto; /* Otomatik margin ile yatayda ortala */
+    display: flex; 
+    justify-content: center; 
+    width: 75%; 
+    padding-top: 25px; 
+    margin: auto; 
+    margin-bottom: 1.5em;
 }
 
 .resignButton{
