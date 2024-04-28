@@ -82,14 +82,15 @@
     overflow: visible;
     margin-bottom: 1.5em;
 }
+
 .CapturedPiecesContainer{
     display: block;
     height: 20vw;
     width: 40vw;
+    margin: auto;
     position: relative;
     padding-top: 10px;
     overflow: hidden;
-    margin-bottom: 1.5em;
 }
 
 .WhitePiecesCaptured{
