@@ -13,9 +13,10 @@
     font-family: 'Montserrat', sans-serif;    color: whitesmoke;
     font-weight: 100;
 }
+
 .Footer {
     background-color: #3b3b3b;
-    padding: 2%;
+    padding: 20px; /* Önceden %2 olarak ayarlanmıştı */
     font-family: 'Montserrat', sans-serif;
     color: whitesmoke;
     font-weight: 100;
@@ -24,6 +25,7 @@
     right: 0;
     bottom: 0;
 }
+
 .footerLink{
     display: inline-block;
     vertical-align: middle;
