@@ -343,7 +343,7 @@
     transform: scale(0.95);
 }
 
-.restartButton{
+.generalButton{
     width: auto; 
     background-color:  #4ae319;
     overflow: hidden;
@@ -361,12 +361,12 @@
     font-family: 'Roboto', sans-serif;
     transition: 0.2s;
 }
-.restartButton:hover{
+.generalButton:hover{
     background-color:  #4abc25;
     transition: 0.2s;
     cursor: pointer;
 }
-.restartButton:active{
+.generalButton:active{
     transform: scale(0.95);
 }
 
