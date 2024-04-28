@@ -1,5 +1,3 @@
-aboutPopUp();
-
 let theme = "Green";
 
 let Board = {
@@ -88,7 +86,7 @@ function aboutPopUp() {
 function closePopUp() {
   let popUp = document.getElementById('PopUp');
   if (popUp) {
-    popUp.parentNode.removeChild(popUp);
+    popUp.remove()
   }
 }
 
