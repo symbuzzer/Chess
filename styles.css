@@ -85,11 +85,14 @@
     display: block;
     height: 20vw;
     width: 40vw;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
     padding-top: 10px;
     overflow: hidden;
     font-family: 'Montserrat', sans-serif;    color: whitesmoke;
+    left: 0;
+    right: 0;
 }
 
 .WhitePiecesCaptured{
