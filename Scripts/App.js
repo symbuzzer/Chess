@@ -84,7 +84,10 @@ function aboutPopUp() {
 }
 
 function closePopUp() {
-  popUp.remove()
+    gameOver = false;
+    gameStarted = true;
+    let popUp = document.getElementById("PopUp");
+    popUp.remove();
 }
 
 function setTheme(t){
