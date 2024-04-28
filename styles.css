@@ -261,13 +261,13 @@
 }
 
 .buttonsContainer{
-    display: block;
-    position: relative;
-    margin: auto;
-    width: 75%;
-    padding-top: 25px;
-
+    display: flex; /* Flexbox modelini kullan */
+    justify-content: center; /* Yatay olarak içerikleri merkeze al */
+    width: 75%; /* Genişliği belirle */
+    padding-top: 25px; /* Üstten boşluk ekle */
+    margin: auto; /* Otomatik margin ile yatayda ortala */
 }
+
 .resignButton{
     width: auto; 
     background-color: #fd3e30;
