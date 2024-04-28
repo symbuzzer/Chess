@@ -16,6 +16,27 @@
 </head>
 
 <body>
+
+<script>
+  function updateTheme() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      // Kullanıcı arayüzü karanlık modda
+      document.body.style.backgroundColor = 'black';
+      document.body.style.color = 'white';
+    } else {
+      // Kullanıcı arayüzü aydınlık modda
+      document.body.style.backgroundColor = 'white';
+      document.body.style.color = 'black';
+    }
+  }
+
+  // İlk yüklemede tema kontrolü
+  updateTheme();
+
+  // Kullanıcı tema değiştirdiğinde arkaplanı güncelle
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateTheme);
+</script>
+    
     <header class="Header">
         <div class="buttonsContainer">
             <button class="restartButton" onclick="restartGame()">Restart</button>
@@ -32,12 +53,10 @@
         <button class="drawButton" onclick="drawGame()">Draw</button>
     </div>
     
-    <div class="Footer"> 
-        <div class="CapturedPiecesContainer">   
-            <center><h3>Captured Pieces</h3></center>
-            <div class="WhitePiecesCaptured"></div>
-            <div class="BlackPiecesCaptured"></div>
-        </div>
+    <div class="CapturedPiecesContainer">   
+        <center><h3>Captured Pieces</h3></center>
+        <div class="WhitePiecesCaptured"></div>
+        <div class="BlackPiecesCaptured"></div>
     </div>
 
     <script src="Scripts/Pieces.js"></script>
