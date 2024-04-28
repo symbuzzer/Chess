@@ -84,10 +84,7 @@ function aboutPopUp() {
 }
 
 function closePopUp() {
-  let popUp = document.getElementById('PopUp');
-  if (popUp) {
-    popUp.remove()
-  }
+  popUp.remove()
 }
 
 function setTheme(t){
