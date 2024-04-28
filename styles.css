@@ -14,14 +14,16 @@
     font-weight: 100;
 }
 
-.Footer{
+.Footer {
     background-color: #3b3b3b;
     padding: 2%;
-    font-family: 'Montserrat', sans-serif;    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    color: whitesmoke;
     font-weight: 100;
     margin-top: 50px;
-    bottom: 0;
-
+    position: relative;
+    width: 100%; /* Footer'ın genişliğinin tam sayfa genişliğini kaplamasını sağlar */
+    box-sizing: border-box; /* Padding'i genişlik hesaplamalarına dahil eder */
 }
 .footerLink{
     display: inline-block;
