@@ -340,6 +340,33 @@
     transform: scale(0.95);
 }
 
+.restartButton{
+    width: auto; 
+    background-color:  #4ae319;
+    overflow: hidden;
+    padding: 10px;
+    margin-top: 10px;
+    display: inline-block;
+    position: relative;
+    margin: auto;
+
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: larger;
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    transition: 0.2s;
+}
+.restartButton:hover{
+    background-color:  #4abc25;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.restartButton:active{
+    transform: scale(0.95);
+}
+
 .squareHover{
     cursor: default;
 }
