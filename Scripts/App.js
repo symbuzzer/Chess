@@ -583,7 +583,7 @@ function resetTurnsAndAnalyzeCheckmates(){
             if(getAllMovesExceptKing(Board, "Black").length == 0){  //no other piece has legal move
                 if(Board.BlackKing.getMoves(Board).length == 0 || !areMovesLegal(Board.BlackKing.getMoves(Board))){ //the king also does not have any moves
                     Board.Stalemate = true;
-                    makePopUp("Draw - Stalemate");
+                    makePopUp("Draw<br>Stalemate");
                     gameOver = true;
                     gameStarted = false
                 }
@@ -640,7 +640,7 @@ function resetTurnsAndAnalyzeCheckmates(){
             if(getAllMovesExceptKing(Board, "White").length == 0){  //no other piece has legal move
                 if(Board.WhiteKing.getMoves(Board).length == 0   || !areMovesLegal(Board.WhiteKing.getMoves(Board))){ //the king also does not have any moves
                     Board.Stalemate = true;
-                    makePopUp("Draw - Stalemate");
+                    makePopUp("Draw<br>Stalemate");
                     gameOver = true;
                     gameStarted = false;
                 }
@@ -650,9 +650,9 @@ function resetTurnsAndAnalyzeCheckmates(){
 
     if(Board.CheckMateOnBlack){
         if(Board.Side == "White"){
-           makePopUp("Checkmate - You Win!");
+           makePopUp("Checkmate<br>You Win!");
         }else{
-            makePopUp("Checkmate - You Lose!");
+            makePopUp("Checkmate<br>You Lose!");
         }
         gameOver = true;
         gameStarted = false;
@@ -660,9 +660,9 @@ function resetTurnsAndAnalyzeCheckmates(){
     }
     if(Board.CheckMateOnWhite){
         if(Board.Side == "Black"){
-            makePopUp("Checkmate - You Win!");
+            makePopUp("Checkmate<br>You Win!");
         }else{
-            makePopUp("Checkmate - You Lose!");
+            makePopUp("Checkmate<br>You Lose!");
         }
         gameOver = true;
         gameStarted = false;
@@ -671,7 +671,7 @@ function resetTurnsAndAnalyzeCheckmates(){
     calculateScore(Board, "White");
     calculateScore(Board, "Black");
     if(Board.WhiteScore == 10000 && Board.BlackScore == 10000){
-        makePopUp("Draw - Insufficient Material");
+        makePopUp("Draw<br>Insufficient Material");
         gameOver = true;
         gameStarted = false;
     }
@@ -685,7 +685,7 @@ function resign(){
     if(!gameOver && gameStarted){
         gameOver = true;
         gameStarted = false;
-        makePopUp("Resigned - You Lose");
+        makePopUp("Resigned<br>You Lose");
     }
 }
 function drawGame(){
@@ -697,7 +697,7 @@ function drawGame(){
             if(Board.WhiteScore - Board.BlackScore < 10){ //if the computer is not winning by a whole lot, it will be nice and accept the draw
                 gameOver = true;
                 gameStarted = false;
-                makePopUp("Draw - By Agreement");
+                makePopUp("Draw<br>By Agreement");
             }else{ //if the computer is clearlt winning, it will decline the draw
                 alert("The computer declined your draw offer!");
             }
@@ -705,7 +705,7 @@ function drawGame(){
             if(Board.BlackScore - Board.WhiteScore < 10){ //if the computer is not winning by a whole lot, it will be nice and accept the draw
                 gameOver = true;
                 gameStarted = false;
-                makePopUp("Draw - By Agreement");
+                makePopUp("Draw<br>By Agreement");
             }else{ //if the computer is clearlt winning, it will decline the draw
                 alert("The computer declined your draw offer!");
             }
@@ -814,7 +814,7 @@ function makePopUp(event){
     let popUpHeader = "<div class='PopUpHeader'> <h1 class='PopUpText'>"+ event +"</h1>    </div>";
     let popUpBodyText = "<h1 class='PopUpBodyText'>Choose Side:</h1>";
 
-    let popUpAboutText = "<h3 class='PopUpBodyText'><br><br>from ALİ to İLKNUR with ❤<br><br>v1.0.0 - 2024/04/28</h3>";
+    let popUpAboutText = "<h3 class='PopUpBodyText'><br><br>from ALİ to İLKNUR with ❤<br><br>v1.0.1 - 2024/04/29</h3>";
     
     let whiteButton = "<button onclick=chooseSide('White') class='ChooseSideButton'><img src='Images/Pieces/WhiteKing.png' height='50vw'></button>";
     let blackButton = "<button onclick=chooseSide('Black') class='ChooseSideButton'><img src='Images/Pieces/BlackKing.png' height='50vw'></button>";
