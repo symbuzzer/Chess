@@ -1,0 +1,18 @@
+{
+    "name": "Chess",
+    "short_name": "Chess",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "https://symbuzzer.github.io/Chess/",
+    "description": "Simple Chess HTML page",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "Images/Icons/WebsiteIcon.png",
+            "type": "image/png",
+            "sizes": "2048x2048"
+        }
+    ]
+}
