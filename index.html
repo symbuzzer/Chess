@@ -21,6 +21,7 @@
         <h1 style="display: inline;" class="headerTitle">Chess</h1>
         <div class="control-group">
             <a href="index.html" class="LinkItem">New Game</a>
+            <button class="newButton" onclick="restartGame()">New Game</button>
             <button class="resignButton" onclick="resign()">Resign</button>
             <button class="drawButton" onclick="drawGame()">Draw</button>
         </div>
@@ -43,7 +44,6 @@
     <script src="Scripts/Pieces.js"></script>
     <script src="Scripts/App.js"></script>
     <script src="Scripts/ComputerPlayer.js"></script>
-    <script src="Scripts/Theme.js"></script>
 
     <script>
       if ('serviceWorker' in navigator) {
