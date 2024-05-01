@@ -38,20 +38,28 @@
         <div class="BlackPiecesCaptured"></div>
     </div>
 
+    <nav style="position: relative; bottom: 0; width: 100%; left: 0; margin-top: 10vh; ">
+
+        <ul class="footer-links" style="padding-bottom: 5px; padding-top: 5px;">
+            <li></li>
+        </ul>
+
+    </nav>
+
     <script src="Scripts/Pieces.js"></script>
     <script src="Scripts/App.js"></script>
     <script src="Scripts/ComputerPlayer.js"></script>
     <script src="Scripts/Theme.js"></script>
 
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js')
-        .then(reg => console.log('Service Worker registered'))
-        .catch(err => console.log('Service Worker registration failed', err));
-    });
-  }
-</script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('Service Worker registered'))
+            .catch(err => console.log('Service Worker registration failed', err));
+        });
+      }
+    </script>
 
 </body>
 </html>
