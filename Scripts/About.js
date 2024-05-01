@@ -1,4 +1,6 @@
-makePopUp("About");
+window.onload = function() {
+    makePopUp(About);
+};
 
 function makePopUp(event){
     let body = document.getElementsByClassName('Container')[0];
