@@ -30,7 +30,7 @@
     border: none;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
-    font-size: small
+    font-size: x-small
 }
 
 .newButton:hover, .resignButton:hover, .drawButton:hover {
