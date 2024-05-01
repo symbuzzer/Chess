@@ -813,8 +813,6 @@ function makePopUp(event){
     
     let popUpHeader = "<div class='PopUpHeader'> <h1 class='PopUpText'>"+ event +"</h1>    </div>";
     let popUpBodyText = "<h1 class='PopUpBodyText'>Choose Side:</h1>";
-
-    let popUpAboutText = "<h3 class='PopUpBodyText'><br><br>from ALİ to İLKNUR with ❤<br><br>v1.0.2 - 2024/05/01</h3>";
     
     let whiteButton = "<button onclick=chooseSide('White') class='ChooseSideButton'><img src='Images/Pieces/WhiteKing.png' height='50vw'></button>";
     let blackButton = "<button onclick=chooseSide('Black') class='ChooseSideButton'><img src='Images/Pieces/BlackKing.png' height='50vw'></button>";
@@ -824,7 +822,7 @@ function makePopUp(event){
     let tough = "<button onclick=chooseDifficulty(3) class='ChooseSideButton DifficultyButton' autofocus> Medium </button>";
     let hard = "<button onclick=chooseDifficulty(4) class='ChooseSideButton DifficultyButton'> Hard (Slow) </button>";
 
-    let popUpBody = "<div class='PopUpBody'>" + difficultyText + normal + tough + hard + popUpBodyText + whiteButton + blackButton + popUpAboutText + "</div>";
+    let popUpBody = "<div class='PopUpBody'>" + difficultyText + normal + tough + hard + popUpBodyText + whiteButton + blackButton + "</div>";
 
     let popUp = "<div id='PopUp'>"+ popUpHeader + popUpBody +"</div>";
     body.innerHTML += popUp;
