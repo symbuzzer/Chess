@@ -14,13 +14,17 @@
     font-weight: 100;
 }
 
-.Footer{
-    background-color: #49A220;
-    padding: 2%;
-    font-family: 'Montserrat', sans-serif;    color: whitesmoke;
-    margin-top: 50px;
-    bottom: 0;
-    text-align: center;
+.Footer {
+    position: fixed; /* Pozisyonunu sabit yapar */
+    left: 0; /* Sol taraftan başlar */
+    right: 0; /* Sağ tarafta biter */
+    bottom: 0; /* Alt tarafta yer alır */
+    background-color: #49A220; /* Arka plan rengi */
+    padding: 2%; /* İçerik etrafında padding */
+    font-family: 'Montserrat', sans-serif; /* Font tipi */
+    color: whitesmoke; /* Yazı rengi */
+    text-align: center; /* Yazıları ortalar */
+    margin: 0; /* Margin sıfırlanır */
 }
 
 .footerLink{
