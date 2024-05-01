@@ -23,7 +23,7 @@
     gap: 20px;
 }
 
-.newButton .resignButton, .drawButton {
+.newButton, .resignButton, .drawButton {
     color: whitesmoke;
     text-decoration: none;
     background: none;
