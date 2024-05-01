@@ -32,6 +32,11 @@
 .headerTitle{
     font-size: xx-large;
 }
+
+.footerText{
+    font-size: xx-large;
+}
+
 .LinkItem{
     display: inline-block;
     margin-left: 10vw;
