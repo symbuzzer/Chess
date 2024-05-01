@@ -1,9 +1,9 @@
-let popUp = document.getElementById("PopUp");
+makePopUp("About");
 
 function makePopUp(event){
     let body = document.getElementsByClassName('Container')[0];
     
-    let popUpHeader = "<div class='PopUpHeader'> <h1 class='PopUpText'>"+ "About" +"</h1>    </div>";
+    let popUpHeader = "<div class='PopUpHeader'> <h1 class='PopUpText'>"+ event +"</h1>    </div>";
 
     let popUpAboutText = "<h3 class='PopUpBodyText'><br><br>from ALİ to İLKNUR with ❤<br><br>v1.0.2 - 2024/05/01</h3>";
 
