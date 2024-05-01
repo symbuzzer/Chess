@@ -12,6 +12,16 @@
         {
             "src": "Images/Icons/WebsiteIcon.png",
             "type": "image/png",
+            "sizes": "2048x2048"
+        },
+        {
+            "src": "Images/Icons/WebsiteIcon192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "Images/Icons/WebsiteIcon512.png",
+            "type": "image/png",
             "sizes": "512x512"
         }
     ]
