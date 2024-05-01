@@ -30,7 +30,7 @@
     border: none;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+    font-size: small;
 }
 
 .newButton:hover, .resignButton:hover, .drawButton:hover {
@@ -311,7 +311,6 @@
     outline: none;
     border: none;
     border-radius: 5px;
-    font-size: larger;
     color:white;
     font-family: 'Roboto', sans-serif;
     transition: 0.2s;
@@ -356,7 +355,6 @@
     outline: none;
     border: none;
     border-radius: 5px;
-    font-size: larger;
     color:white;
     font-family: 'Roboto', sans-serif;
     transition: 0.2s;
@@ -382,7 +380,6 @@
     outline: none;
     border: none;
     border-radius: 5px;
-    font-size: larger;
     color:white;
     font-family: 'Roboto', sans-serif;
     transition: 0.2s;
