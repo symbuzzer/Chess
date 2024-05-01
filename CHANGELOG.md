@@ -1,3 +1,8 @@
+## v1.1.0
+- Completely rewrite UI
+- Fixed sound latency issue on first move
+- Codes cleaned
+
 ## v1.0.2
 - Added PWA feature for Android and iOS devices
 - Removed unused assets
