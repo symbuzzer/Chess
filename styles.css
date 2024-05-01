@@ -10,8 +10,31 @@
 .Header{
     background-color: #49A220;
     padding: 3%;
-    font-family: 'Montserrat', sans-serif;    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    color: whitesmoke;
     font-weight: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.control-group {
+    display: flex;
+    gap: 20px;
+}
+
+.LinkItem, .resignButton, .drawButton {
+    color: whitesmoke;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+.LinkItem:hover, .resignButton:hover, .drawButton:hover {
+    text-decoration: underline;
 }
 
 .Footer {
