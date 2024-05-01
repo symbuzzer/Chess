@@ -10,7 +10,7 @@
     "orientation": "portrait",
     "icons": [
         {
-            "src": "https://raw.githubusercontent.com/symbuzzer/Chess/main/Images/Icons/WebsiteIcon.png",
+            "src": "https://raw.githubusercontent.com/symbuzzer/Chess/master/Images/Icons/WebsiteIcon.png",
             "sizes": "2048x2048"
         }
     ]
