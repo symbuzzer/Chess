@@ -6,8 +6,6 @@ const assetsToCache = [
   '/Scripts/App.js',
   '/Scripts/ComputerPlayer.js',
   '/Scripts/Pieces.js',
-  '/Scripts/Restart.js',
-  '/Scripts/Theme.js',
   '/Images/Icons/Dropdown.png',
   '/Images/Icons/WebsiteIcon.png',
   '/Images/Icons/WebsiteIcon144.png',
