@@ -3,7 +3,7 @@
     "short_name": "Chess",
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
-    "display": "standalone",
+    "display": "fullscreen",
     "scope": "/",
     "start_url": "https://symbuzzer.github.io/Chess/",
     "description": "Simple Chess HTML page",
