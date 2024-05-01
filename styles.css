@@ -442,6 +442,9 @@ nav {
     .drawButton{
         font-size: small;
     }
+    .newButton{
+        font-size: small;
+    }
 
     .LinkItem{
         display: inline-flex;
