@@ -1,5 +1,5 @@
 let theme = "Green";
-sound();
+silentSound();
 
 let Board = {
 
@@ -977,6 +977,13 @@ function getAllMovesExceptKing(B, s){
 function sound(){
     var snd = new Audio("Sound/ChessMoveSound.mp3");
     snd.volume = 0.5;
+    snd.play();
+    snd.currentTime=0;
+}
+
+function silentSound(){
+    var snd = new Audio("Sound/ChessMoveSound.mp3");
+    snd.volume = 0;
     snd.play();
     snd.currentTime=0;
 }
