@@ -1,7 +1,8 @@
 let theme = "Green";
+sound();
 
 let Board = {
-sound();
+
 }
 let makingPromotion = false;
 let gameOver = false;
