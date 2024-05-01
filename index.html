@@ -43,13 +43,27 @@
     <script src="Scripts/Restart.js"></script>
     <script src="Scripts/Theme.js"></script>
 
-    <script>
-     if (!navigator.serviceWorker.controller) {
-         navigator.serviceWorker.register("/sw.js").then(function(reg) {
-             console.log("Service worker has been registered for scope: " + reg.scope);
-         });
-     }
-    </script>
+
+<script>
+    window.addEventListener('load', () => {
+      registerSW();
+    });
+ 
+    // Register the Service Worker
+    async function registerSW() {
+      if ('serviceWorker' in navigator) {
+        try {
+          await navigator
+                .serviceWorker
+                .register('sw.js');
+        }
+        catch (e) {
+          console.log('SW registration failed');
+        }
+      }
+    }
+ </script>
+
 
 </body>
 </html>
