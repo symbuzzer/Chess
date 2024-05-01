@@ -10,6 +10,7 @@ const assetsToCache = [
   '/Scripts/Theme.js',
   '/Images/Icons/Dropdown.png',
   '/Images/Icons/WebsiteIcon.png',
+  '/Images/Icons/WebsiteIcon144.png',
   '/Images/Icons/WebsiteIcon192.png',
   '/Images/Icons/WebsiteIcon512.png',
   '/manifest.json'
