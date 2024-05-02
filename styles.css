@@ -12,18 +12,6 @@ body {
     padding-bottom: 25px;
 }
 
-  @media (min-width: 768px) {
-    .error-message {
-      display: block;
-    }
-    .control-group {
-      display: none;
-    }
-    .MainContainer {
-      display: none;
-    }
-  }
-
 .Header{
     z-index: 1002;
     position: fixed;
