@@ -13,6 +13,7 @@ body {
 }
 
 .Header{
+    z-index: 1000;
     position: fixed;
     top: 0;
     left: 0;
@@ -21,7 +22,6 @@ body {
     padding: 3%;
     font-family: 'Montserrat', sans-serif;
     color: whitesmoke;
-    z-index: 1000;
     font-weight: 100;
     display: flex;
     justify-content: space-between;
