@@ -821,20 +821,19 @@ function makePopUp(event) {
     let controlGroup = document.getElementsByClassName('control-group')[0];
 
     let popUpHeader = "<div class='PopUpHeader'><h1 class='PopUpText'>" + event + "</h1></div>";
-    let popUpBodyText = "<h1 class='PopUpBodyText'><br>Choose Side:</h1>";
+    let popUpBodyText = "<h1 class='PopUpBodyText'>Choose Side:</h1>";
     let whiteButton = "<button onclick=chooseSide('White') class='ChooseSideButton'><img src='Images/Pieces/WhiteKing.png' height='50vw'></button>";
     let blackButton = "<button onclick=chooseSide('Black') class='ChooseSideButton'><img src='Images/Pieces/BlackKing.png' height='50vw'></button>";
     let difficultyText = "<h2 class='PopUpBodyText' style='margin-top: 8px;'>Choose Difficulty:</h2>";
     let normal = "<button onclick=chooseDifficulty(2) class='ChooseSideButton DifficultyButton'> Easy </button>";
     let tough = "<button onclick=chooseDifficulty(3) class='ChooseSideButton DifficultyButton' autofocus> Medium </button>";
     let hard = "<button onclick=chooseDifficulty(4) class='ChooseSideButton DifficultyButton'> Hard </button>";
-
-    let popUpBody = "<div class='PopUpBody'>" + difficultyText + normal + tough + hard + popUpBodyText + whiteButton + blackButton + "</div>";
+    let br = "<br>";
+    let popUpBody = "<div class='PopUpBody'>" + difficultyText + normal + tough + hard + br + popUpBodyText + whiteButton + blackButton + "</div>";
     let popUp = "<div id='PopUp' onclick='event.stopPropagation()'>" + popUpHeader + popUpBody + "</div>";
 
     body.innerHTML += popUp;
     controlGroup.style.display = 'none';
-    mediumButton.focus();
 }
 
 
