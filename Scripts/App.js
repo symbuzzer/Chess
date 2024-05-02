@@ -831,16 +831,13 @@ function makePopUp(event) {
     let hard = "<button id='hard' class='ChooseSideButton DifficultyButton'>Hard</button>";
     let br = "<br>";
     let popUpBody = "<div class='PopUpBody'>" + difficultyText + normal + tough + hard + br + br + popUpBodyText + whiteButton + blackButton + "</div>";
-    let popUp = "<div id='PopUp' onclick='event.stopPropagation(); ensureFocus();'>" + popUpHeader + popUpBody + "</div>";
+    let popUp = "<div id='PopUp' onclick='event.stopPropagation();'>" + popUpHeader + popUpBody + "</div>";
 
     // Popup'ı gövdeye ekleme
     body.innerHTML += popUp;
     controlGroup.style.display = 'none';
 
-    // Medium düğmesine otomatik odaklama
-    ensureFocus();
-
-    // Tüm düğmelere olay işleyicileri
+    // Butonlara olay işleyicileri ekleme
     document.getElementById('easy').addEventListener('click', function() { chooseDifficulty(2); });
     document.getElementById('medium').addEventListener('click', function() { chooseDifficulty(3); });
     document.getElementById('hard').addEventListener('click', function() { chooseDifficulty(4); });
@@ -848,16 +845,15 @@ function makePopUp(event) {
     document.getElementById('blackButton').addEventListener('click', function() { chooseSide('Black'); });
 }
 
-function ensureFocus() {
-    document.getElementById('medium').focus();
-}
-
+// Sayfa genelindeki tıklamaları dinleme ve gerektiğinde Medium butonuna odaklama
 document.addEventListener('click', function(event) {
     let popUp = document.getElementById('PopUp');
-    if (popUp && !popUp.contains(event.target)) {
-        ensureFocus(); // Popup dışına tıklanırsa odaklanmayı sağlar
+    let mediumButton = document.getElementById('medium');
+    if (!popUp.contains(event.target)) {
+        mediumButton.focus();  // Popup dışına tıklanırsa Medium'a odaklan
     }
 });
+
 
 
 
