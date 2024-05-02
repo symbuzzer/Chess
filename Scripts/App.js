@@ -834,19 +834,7 @@ function makePopUp(event) {
 
     body.innerHTML += popUp;
     controlGroup.style.display = 'none';
-    
-    document.addEventListener('click', function(event) {
-       var popUp = document.getElementById('PopUp');
-       var isClickInsidePopUp = popUp.contains(event.target);
-
-       if (!isClickInsidePopUp) {
-        // Pop-up dışına tıklama algılandı, odaklanmayı yeniden ayarlayın
-           var mediumButton = document.querySelector('.DifficultyButton[autofocus]');
-           if (mediumButton) {
-               mediumButton.focus(); // Odaklanmayı "Medium" düğmesine getir
-           }
-       }
-   });
+    mediumButton.focus();
 }
 
 
