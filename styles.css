@@ -7,6 +7,10 @@
   
   }
 
+body {
+    padding-top: 50px; 
+}
+
 .Header{
     position: fixed;
     top: 0;           /* Üst kenardan başlamasını sağlar */
