@@ -134,14 +134,11 @@ body {
 }
 
 @media (min-width: 768px) {
-    .MainContainer {
-        flex-direction: row;
-        justify-content: space-around;
-        min-height: auto;
-    }
-    .Container, .CapturedPiecesContainer {
-        margin-bottom: 0;
-        height: auto;
+    .Container {
+        width: 30vw;
+        height: 30vw;
+        max-width: 300px;
+        max-height: 300px;
     }
 }
 
