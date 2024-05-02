@@ -848,14 +848,26 @@ function makePopUp(event) {
     document.getElementById('medium').focus();
 }
 
-// Sayfa genelindeki tıklamaları dinleme ve gerektiğinde Medium butonuna odaklama
 document.addEventListener('click', function(event) {
     let popUp = document.getElementById('PopUp');
     let mediumButton = document.getElementById('medium');
-    if (!popUp.contains(event.target)) {
-        mediumButton.focus();  // Popup dışına tıklanırsa Medium'a odaklan
+    
+    if (popUp && !popUp.contains(event.target)) {
+        // Popup dışına tıklanırsa Medium'a odaklan
+        mediumButton.focus();
+    } else if (popUp && popUp.contains(event.target)) {
+        // Popup içindeki butonlar kontrolü
+        let isButton = event.target.closest('button');
+
+        // Eğer tıklanan nesne buton değilse ve içinde 'DifficultyButton' class'ı yoksa
+        if (isButton && !isButton.classList.contains('DifficultyButton')) {
+            // Butonlar dışındaki herhangi bir yere tıklanırsa ve tıklanan 'DifficultyButton' sınıfına sahip değilse
+            mediumButton.focus();
+        }
+        // Not: 'DifficultyButton' sınıfına sahip butonlara tıklandığında odaklanma değişmeyecek ve o butonda kalacaktır.
     }
 });
+
 
 
 function makePromotion(color, i, j){
