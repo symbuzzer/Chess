@@ -139,6 +139,12 @@ body {
         justify-content: space-around;
         min-height: 50vh;
     }
+    .Container {
+        height: 25vw;
+        width: 25vw;
+        margin-bottom: 1.5em; /* Alt div ile arada boşluk bırak */
+        overflow: visible;
+    }
     .Container, .CapturedPiecesContainer {
         margin-bottom: 0;
     }
