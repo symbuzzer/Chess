@@ -115,6 +115,7 @@ function chooseSide(side) {
 
     let popUp = document.getElementById("PopUp");
     popUp.remove();
+    controlGroup.style.display = 'block';
 
     setPieces();
     drawBoard();
