@@ -101,12 +101,13 @@
 
 .MainContainer {
     display: flex;
-    flex-direction: column; /* Mobil cihazlar için varsayılan olarak sütun yönünde */
-    align-items: center; /* İçerikleri ortala */
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Ana container yüksekliğini sayfa yüksekliğine eşitle */
+    min-height: calc(100vh - 70px); /* footer'ın yüksekliği tahmini bir değer olabilir */
     margin: 0;
     padding: 0;
+    padding-bottom: 70px; /* Footer yüksekliği kadar padding-bottom ekleyin */
 }
 
 .Container {
@@ -123,14 +124,15 @@
     overflow: hidden;
 }
 
-/* Geniş ekranlar için medya sorgusu */
 @media (min-width: 768px) {
     .MainContainer {
-        flex-direction: row; /* Geniş ekranlarda yan yana olacak şekilde ayarla */
-        justify-content: space-around; /* İçerikleri eşit aralıklı dağıt */
+        flex-direction: row;
+        justify-content: space-around;
+        min-height: 100vh;
+        padding-bottom: 0; /* Geniş ekranlarda alt padding'i kaldır */
     }
     .Container, .CapturedPiecesContainer {
-        margin-bottom: 0; /* Yan yana olduğunda alt boşluğu kaldır */
+        margin-bottom: 0;
     }
 }
 
