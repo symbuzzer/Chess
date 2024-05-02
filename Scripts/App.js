@@ -844,8 +844,10 @@ function makePopUp(event) {
     document.getElementById('whiteButton').addEventListener('click', function() { chooseSide('White'); });
     document.getElementById('blackButton').addEventListener('click', function() { chooseSide('Black'); });
 
-    // İlk odaklanma Medium butonuna
-    document.getElementById('medium').focus();
+    // İlk odaklanma Medium butonuna, setTimeout ile zamanlama sorununu çözme
+    setTimeout(function() {
+        document.getElementById('medium').focus();
+    }, 0);
 }
 
 // Sayfa genelindeki tıklamaları dinleme ve gerektiğinde Medium butonuna odaklama
@@ -856,6 +858,7 @@ document.addEventListener('click', function(event) {
         mediumButton.focus();  // Popup dışına tıklanırsa Medium'a odaklan
     }
 });
+
 
 function makePromotion(color, i, j){
     let node = document.createElement("div");
