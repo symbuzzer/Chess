@@ -202,7 +202,6 @@ body {
 
 /*popup*/
 #PopUp{
-    
     top: 10%;
     width: 30vw;
     height: auto;
@@ -218,7 +217,8 @@ body {
     box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.4);
     animation-name: PopUp;
     animation-duration: 1s;
-
+    align-items: center;
+    justify-content: center;
 }
 .PopUpHeader{
     position: relative; 
