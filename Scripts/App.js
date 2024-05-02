@@ -854,11 +854,6 @@ function makePopUp(event) {
     document.getElementById('medium').click();
 }
 
-});
-
-
-
-
 function makePromotion(color, i, j){
     let node = document.createElement("div");
     makingPromotion = true;    
