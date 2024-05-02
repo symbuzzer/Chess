@@ -98,27 +98,40 @@
     margin: 0 auto;
     font-size: 0;
 }
-.Container{
-    display: block;
-    height: 40vw;
-    width: 40vw;
-    margin: auto;
-    position: relative;
-    left: 0;
-    right: 0;
-    margin-top:5vh;
-    overflow: visible;
-    margin-bottom: 1.5em;
+
+.MainContainer {
+    display: flex;
+    flex-direction: column; /* Mobil cihazlar için varsayılan olarak sütun yönünde */
+    align-items: center; /* İçerikleri ortala */
+    justify-content: center;
+    min-height: 100vh; /* Ana container yüksekliğini sayfa yüksekliğine eşitle */
+    margin: 0;
+    padding: 0;
 }
 
-.CapturedPiecesContainer{
-    display: block;
+.Container {
+    height: 40vw;
+    width: 40vw;
+    margin-bottom: 1.5em; /* Alt div ile arada boşluk bırak */
+    overflow: visible;
+}
+
+.CapturedPiecesContainer {
     height: 20vw;
     width: 40vw;
-    margin: auto;
-    position: relative;
     padding-top: 10px;
     overflow: hidden;
+}
+
+/* Geniş ekranlar için medya sorgusu */
+@media (min-width: 768px) {
+    .MainContainer {
+        flex-direction: row; /* Geniş ekranlarda yan yana olacak şekilde ayarla */
+        justify-content: space-around; /* İçerikleri eşit aralıklı dağıt */
+    }
+    .Container, .CapturedPiecesContainer {
+        margin-bottom: 0; /* Yan yana olduğunda alt boşluğu kaldır */
+    }
 }
 
 .WhitePiecesCaptured{
