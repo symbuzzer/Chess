@@ -801,9 +801,8 @@ function makePopUp(event) {
     let popUpBodyText = "<h1 class='PopUpBodyText'>Choose Side:</h1>";
     let whiteButton = "<button id='whiteButton' class='ChooseSideButton'><img src='Images/Pieces/WhiteKing.png' height='50vw'></button>";
     let blackButton = "<button id='blackButton' class='ChooseSideButton'><img src='Images/Pieces/BlackKing.png' height='50vw'></button>";
-    let startButton = "<button id='start' class='ChooseSideButton DifficultyButton'>Start</button>";
     let br = "<br>";
-    let popUpBody = "<div class='PopUpBody'>" + difficultyText + normal + tough + hard + br + br + popUpBodyText + whiteButton + blackButton + br + br + startButton + "</div>";
+    let popUpBody = "<div class='PopUpBody'>" + difficultyText + normal + tough + hard + br + br + popUpBodyText + whiteButton + blackButton + "</div>";
     let popUp = "<div id='PopUp' onclick='event.stopPropagation();'>" + popUpHeader + popUpBody + "</div>";
 
     body.innerHTML += popUp;
@@ -814,7 +813,6 @@ function makePopUp(event) {
     document.getElementById('hard').addEventListener('click', function() { chooseDifficulty(4); });
     document.getElementById('whiteButton').addEventListener('click', function() { chooseSide('White'); });
     document.getElementById('blackButton').addEventListener('click', function() { chooseSide('Black'); });
-    document.getElementById('start').addEventListener('click', checkAndStartGame);
 }
 
 function chooseDifficulty(d) {
