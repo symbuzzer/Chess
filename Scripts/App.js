@@ -809,25 +809,41 @@ function copyBoard(B) {
     return cloneBoard;
 
 }
-function makePopUp(event){
+
+function makePopUp(event) {
     let body = document.getElementsByClassName('Container')[0];
-    
-    let popUpHeader = "<div class='PopUpHeader'> <h1 class='PopUpText'>"+ event +"</h1>    </div>";
+    let controlGroup = document.getElementsByClassName('control-group')[0];
+
+    let popUpHeader = "<div class='PopUpHeader'><h1 class='PopUpText'>" + event + "</h1></div>";
+    let closeButton = "<button onclick='closePopUp()' class='closeButton'>Close</button>";
     let popUpBodyText = "<h1 class='PopUpBodyText'>Choose Side:</h1>";
-    
     let whiteButton = "<button onclick=chooseSide('White') class='ChooseSideButton'><img src='Images/Pieces/WhiteKing.png' height='50vw'></button>";
     let blackButton = "<button onclick=chooseSide('Black') class='ChooseSideButton'><img src='Images/Pieces/BlackKing.png' height='50vw'></button>";
     let difficultyText = "<h2 class='PopUpBodyText' style='margin-top: 8px;'>Choose Difficulty:</h2>";
-
     let normal = "<button onclick=chooseDifficulty(2) class='ChooseSideButton DifficultyButton'> Easy </button>";
     let tough = "<button onclick=chooseDifficulty(3) class='ChooseSideButton DifficultyButton' autofocus> Medium </button>";
     let hard = "<button onclick=chooseDifficulty(4) class='ChooseSideButton DifficultyButton'> Hard (Slow) </button>";
 
-    let popUpBody = "<div class='PopUpBody'>" + difficultyText + normal + tough + hard + popUpBodyText + whiteButton + blackButton + "</div>";
+    let popUpBody = "<div class='PopUpBody'>" + difficultyText + normal + tough + hard + popUpBodyText + whiteButton + blackButton + closeButton + "</div>";
+    let popUp = "<div id='PopUp'>" + popUpHeader + popUpBody + "</div>";
 
-    let popUp = "<div id='PopUp'>"+ popUpHeader + popUpBody +"</div>";
     body.innerHTML += popUp;
+
+    // Gizle control-group div
+    controlGroup.style.display = 'none';
 }
+
+function closePopUp() {
+    let popUp = document.getElementById('PopUp');
+    let controlGroup = document.getElementsByClassName('control-group')[0];
+
+    // Popup'ı kaldır
+    popUp.parentNode.removeChild(popUp);
+
+    // control-group div'ini tekrar görünür yap
+    controlGroup.style.display = 'block';
+}
+
 
 function makePromotion(color, i, j){
     let node = document.createElement("div");
