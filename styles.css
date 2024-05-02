@@ -138,7 +138,6 @@ body {
         flex-direction: row;
         justify-content: space-around;
         min-height: 100vh;
-        padding-bottom: 0; /* Geniş ekranlarda alt padding'i kaldır */
     }
     .Container, .CapturedPiecesContainer {
         margin-bottom: 0;
