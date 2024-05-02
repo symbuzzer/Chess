@@ -1,5 +1,5 @@
 ## v1.1.1
-- Fixed wide-screen issues
+- Fixed game setting menu
 
 ## v1.1.0
 - Completely rewrite UI
