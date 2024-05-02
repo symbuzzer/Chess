@@ -850,7 +850,6 @@ function makePopUp(event) {
         });
     });
 }
-</script>
 
 function makePromotion(color, i, j){
     let node = document.createElement("div");
