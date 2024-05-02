@@ -833,6 +833,10 @@ function chooseSide(side) {
         OpponentSide = "White";
     }
 
+    setPieces();
+    drawBoard();
+    resetPotentialChecks(Board);
+
 }
 
 function startGame(){
@@ -841,9 +845,6 @@ function startGame(){
     let controlGroup = document.querySelector('.control-group');
     controlGroup.style.display = 'block';
 
-    setPieces();
-    drawBoard();
-    resetPotentialChecks(Board);
     if (Board.Turn == OpponentSide) {
         calculateOpponentMove(); //white -> computer goes first
     }
