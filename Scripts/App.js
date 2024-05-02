@@ -834,16 +834,8 @@ function makePopUp(event) {
 
     body.innerHTML += popUp;
     controlGroup.style.display = 'none';
-
-    document.addEventListener('click', function closePopUp(event) {
-        let popUp = document.getElementById('PopUp');
-        if (popUp) {
-            popUp.parentNode.removeChild(popUp);
-            controlGroup.style.display = 'block';
-            document.removeEventListener('click', closePopUp);
-        }
-    });
 }
+
 
 function makePromotion(color, i, j){
     let node = document.createElement("div");
