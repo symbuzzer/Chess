@@ -821,42 +821,40 @@ function makePopUp(event) {
     let controlGroup = document.getElementsByClassName('control-group')[0];
 
     // Popup yapısını oluşturma
-    let popUpHeader = "<div class='PopUpHeader'><h1 class='PopUpText'>" + event + "</h1></div>";
-    let popUpBodyText = "<h1 class='PopUpBodyText'>Choose Side:</h1>";
-    let whiteButton = "<button id='whiteButton' class='ChooseSideButton'><img src='Images/Pieces/WhiteKing.png' height='50vw'></button>";
-    let blackButton = "<button id='blackButton' class='ChooseSideButton'><img src='Images/Pieces/BlackKing.png' height='50vw'></button>";
-    let difficultyText = "<h2 class='PopUpBodyText' style='margin-top: 8px;'>Choose Difficulty:</h2>";
-    let normal = "<button id='easy' class='ChooseSideButton DifficultyButton'>Easy</button>";
-    let tough = "<button id='medium' class='ChooseSideButton DifficultyButton'>Medium</button>";
-    let hard = "<button id='hard' class='ChooseSideButton DifficultyButton'>Hard</button>";
-    let br = "<br>";
-    let popUpBody = "<div class='PopUpBody'>" + difficultyText + normal + tough + hard + br + br + popUpBodyText + whiteButton + blackButton + "</div>";
-    let popUp = "<div id='PopUp' onclick='event.stopPropagation();'>" + popUpHeader + popUpBody + "</div>";
+    let popUpHeader = `<div class='PopUpHeader'><h1 class='PopUpText'>${event}</h1></div>`;
+    let popUpBodyText = `<h1 class='PopUpBodyText'>Choose Side:</h1>`;
+    let whiteButton = `<button id='whiteButton' class='ChooseSideButton'><img src='Images/Pieces/WhiteKing.png' height='50vw'></button>`;
+    let blackButton = `<button id='blackButton' class='ChooseSideButton'><img src='Images/Pieces/BlackKing.png' height='50vw'></button>`;
+    let difficultyText = `<h2 class='PopUpBodyText' style='margin-top: 8px;'>Choose Difficulty:</h2>`;
+    let normal = `<button id='easy' class='ChooseSideButton DifficultyButton'>Easy</button>`;
+    let tough = `<button id='medium' class='ChooseSideButton DifficultyButton'>Medium</button>`;
+    let hard = `<button id='hard' class='ChooseSideButton DifficultyButton'>Hard</button>`;
+    let br = `<br>`;
+    let popUpBody = `<div class='PopUpBody'>${difficultyText}${normal}${tough}${hard}${br}${br}${popUpBodyText}${whiteButton}${blackButton}</div>`;
+    let popUp = `<div id='PopUp' onclick='event.stopPropagation();'>${popUpHeader}${popUpBody}</div>`;
 
     // Popup'ı gövdeye ekleme
     body.innerHTML += popUp;
     controlGroup.style.display = 'none';
 
-    // Butonlara olay işleyicileri ekleme
-    document.getElementById('easy').addEventListener('click', function() { chooseDifficulty(2); });
-    document.getElementById('medium').addEventListener('click', function() { chooseDifficulty(3); });
-    document.getElementById('hard').addEventListener('click', function() { chooseDifficulty(4); });
-    document.getElementById('whiteButton').addEventListener('click', function() { chooseSide('White'); });
-    document.getElementById('blackButton').addEventListener('click', function() { chooseSide('Black'); });
+    // MutationObserver ile DOM değişikliklerini izleme ve Medium butonuna odaklama
+    let observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.addedNodes.length) {
+                for (let node of mutation.addedNodes) {
+                    if (node.id === 'PopUp') {
+                        document.getElementById('medium').focus();
+                        observer.disconnect(); // Gözlemciyi devre dışı bırak
+                        break;
+                    }
+                }
+            }
+        });
+    });
 
-    // İlk odaklanma Medium butonuna, daha uzun bir gecikme ile
-    setTimeout(function() {
-        document.getElementById('medium').focus();
-    }, 100); // Gecikme süresini 100ms olarak artırdık
+    // Gözlemci yapılandırması ve başlatma
+    observer.observe(body, { childList: true, subtree: true });
 }
-
-// Sayfa yükleme tamamlandığında Medium butonuna odaklama
-window.onload = function() {
-    const mediumButton = document.getElementById('medium');
-    if (mediumButton) {
-        mediumButton.focus();
-    }
-};
 
 // Sayfa genelindeki tıklamaları dinleme ve gerektiğinde Medium butonuna odaklama
 document.addEventListener('click', function(event) {
@@ -866,6 +864,7 @@ document.addEventListener('click', function(event) {
         mediumButton.focus();  // Popup dışına tıklanırsa Medium'a odaklan
     }
 });
+
 
 function makePromotion(color, i, j){
     let node = document.createElement("div");
