@@ -1,3 +1,6 @@
+## v1.1.1
+- Fixed wide-screen issues
+
 ## v1.1.0
 - Completely rewrite UI
 - Fixed sound latency issue on first move
