@@ -113,19 +113,12 @@ function chooseSide(side) {
         OpponentSide = "White";
     }
 
-    let popUp = document.getElementById("PopUp");
-    popUp.remove();
-
     setPieces();
     drawBoard();
     resetPotentialChecks(Board);
     if (Board.Turn == OpponentSide) {
         calculateOpponentMove(); //white -> computer goes first
     }
-
-    // Make the control-group visible
-    let controlGroup = document.querySelector('.control-group');
-    controlGroup.style.display = 'block'; // or use 'visibility: visible;' if using visibility in CSS
 }
 
 
@@ -823,15 +816,16 @@ function makePopUp(event) {
 
     // Popup yapısını oluşturma
     let popUpHeader = "<div class='PopUpHeader'><h1 class='PopUpText'>" + event + "</h1></div>";
-    let popUpBodyText = "<h1 class='PopUpBodyText'>Choose Side:</h1>";
-    let whiteButton = "<button id='whiteButton' class='ChooseSideButton'><img src='Images/Pieces/WhiteKing.png' height='50vw'></button>";
-    let blackButton = "<button id='blackButton' class='ChooseSideButton'><img src='Images/Pieces/BlackKing.png' height='50vw'></button>";
     let difficultyText = "<h2 class='PopUpBodyText' style='margin-top: 8px;'>Choose Difficulty:</h2>";
     let normal = "<button id='easy' class='ChooseSideButton DifficultyButton'>Easy</button>";
     let tough = "<button id='medium' class='ChooseSideButton DifficultyButton'>Medium</button>";
     let hard = "<button id='hard' class='ChooseSideButton DifficultyButton'>Hard</button>";
+    let popUpBodyText = "<h1 class='PopUpBodyText'>Choose Side:</h1>";
+    let whiteButton = "<button id='whiteButton' class='ChooseSideButton'><img src='Images/Pieces/WhiteKing.png' height='50vw'></button>";
+    let blackButton = "<button id='blackButton' class='ChooseSideButton'><img src='Images/Pieces/BlackKing.png' height='50vw'></button>";
+    let startButton = <button id='start' class='ChooseSideButton DifficultyButton'>Start</button>";
     let br = "<br>";
-    let popUpBody = "<div class='PopUpBody'>" + difficultyText + normal + tough + hard + br + br + popUpBodyText + whiteButton + blackButton + "</div>";
+    let popUpBody = "<div class='PopUpBody'>" + difficultyText + normal + tough + hard + br + br + popUpBodyText + whiteButton + blackButton + br + br + startButton + "</div>";
     let popUp = "<div id='PopUp' onclick='event.stopPropagation();'>" + popUpHeader + popUpBody + "</div>";
 
     body.innerHTML += popUp;
@@ -842,10 +836,16 @@ function makePopUp(event) {
     document.getElementById('hard').addEventListener('click', function() { chooseDifficulty(4); });
     document.getElementById('whiteButton').addEventListener('click', function() { chooseSide('White'); });
     document.getElementById('blackButton').addEventListener('click', function() { chooseSide('Black'); });
+    document.getElementById('start').addEventListener('click', function() { startGame(); });
 
 }
 
-
+function startGame
+    let popUp = document.getElementById("PopUp");
+    popUp.remove();
+    let controlGroup = document.querySelector('.control-group');
+    controlGroup.style.display = 'block';
+}
 
 function makePromotion(color, i, j){
     let node = document.createElement("div");
