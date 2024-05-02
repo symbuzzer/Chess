@@ -816,35 +816,47 @@ function copyBoard(B) {
 
 }
 
-function makePopUp(event){
+function makePopUp(event) {
     let body = document.getElementsByClassName('Container')[0];
-    
-    let popUpHeader = "<div class='PopUpHeader'> <h1 class='PopUpText'>"+ event +"</h1>    </div>";
+    let controlGroup = document.getElementsByClassName('control-group')[0];
+
+    // Popup yapısını oluşturma
+    let popUpHeader = "<div class='PopUpHeader'><h1 class='PopUpText'>" + event + "</h1></div>";
     let popUpBodyText = "<h1 class='PopUpBodyText'>Choose Side:</h1>";
-    let whiteButton = "<button onclick=chooseSide('White') class='ChooseSideButton'><img src='Images/Pieces/WhiteKing.png' height='50vw'></button>";
-    let blackButton = "<button onclick=chooseSide('Black') class='ChooseSideButton'><img src='Images/Pieces/BlackKing.png' height='50vw'></button>";
-    let difficultyText = "<h2 class='PopUpBodyText' style='margin-top: 8px;'>Choose Difficulty:</h2>"
-
-    let normal = "<button onclick=chooseDifficulty(2) class='ChooseSideButton DifficultyButton'> Easy </button>";
-    let tough = "<button onclick=chooseDifficulty(3) class='ChooseSideButton DifficultyButton' autofocus> Medium </button>";
-    let hard = "<button onclick=chooseDifficulty(4) class='ChooseSideButton DifficultyButton'> Hard (Slow) </button>";
-
-    let themeText = "<h2 class='PopUpBodyText' style='margin-top: 8px;'>Choose Theme:</h2>";
-
-    let brownTheme = "<button onclick=setTheme('Brown') class='brownButton'></button>";
-    let blueTheme = "<button onclick=setTheme('Blue') class='blueButton'></button>";
-    let greenTheme = "<button onclick=setTheme('Green') class='greenButton'></button>";
+    let whiteButton = "<button id='whiteButton' class='ChooseSideButton'><img src='Images/Pieces/WhiteKing.png' height='50vw'></button>";
+    let blackButton = "<button id='blackButton' class='ChooseSideButton'><img src='Images/Pieces/BlackKing.png' height='50vw'></button>";
+    let difficultyText = "<h2 class='PopUpBodyText' style='margin-top: 8px;'>Choose Difficulty:</h2>";
+    let normal = "<button id='easy' class='ChooseSideButton DifficultyButton'>Easy</button>";
+    let tough = "<button id='medium' class='ChooseSideButton DifficultyButton'>Medium</button>";
+    let hard = "<button id='hard' class='ChooseSideButton DifficultyButton'>Hard</button>";
     let br = "<br>";
-    let viewBoard = "<button onclick=viewBoard() class='viewBoardButton' > View Board </button>";
+    let popUpBody = "<div class='PopUpBody'>" + difficultyText + normal + tough + hard + br + br + popUpBodyText + whiteButton + blackButton + "</div>";
+    let popUp = "<div id='PopUp' onclick='event.stopPropagation();'>" + popUpHeader + popUpBody + "</div>";
 
-
-    let popUpBody = "<div class='PopUpBody'>" + popUpBodyText + whiteButton + blackButton + difficultyText + normal + tough + hard + themeText + brownTheme + blueTheme + greenTheme +br + br + viewBoard+  "</div>";
-
-
-    let popUp = "<div id='PopUp'>"+ popUpHeader + popUpBody +"</div>";
+    // Popup'ı gövdeye ekleme
     body.innerHTML += popUp;
+    controlGroup.style.display = 'none';
 
+    // Butonlara olay işleyicileri ekleme
+    document.getElementById('easy').addEventListener('click', function() { chooseDifficulty(2); });
+    document.getElementById('medium').addEventListener('click', function() { chooseDifficulty(3); });
+    document.getElementById('hard').addEventListener('click', function() { chooseDifficulty(4); });
+    document.getElementById('whiteButton').addEventListener('click', function() { chooseSide('White'); });
+    document.getElementById('blackButton').addEventListener('click', function() { chooseSide('Black'); });
+
+    // İlk odaklanma Medium butonuna
+    document.getElementById('medium').focus();
 }
+
+// Sayfa genelindeki tıklamaları dinleme ve gerektiğinde Medium butonuna odaklama
+document.addEventListener('click', function(event) {
+    let popUp = document.getElementById('PopUp');
+    let mediumButton = document.getElementById('medium');
+    if (!popUp.contains(event.target)) {
+        mediumButton.focus();  // Popup dışına tıklanırsa Medium'a odaklan
+    }
+});
+
 
 function makePromotion(color, i, j){
     let node = document.createElement("div");
