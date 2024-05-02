@@ -852,21 +852,27 @@ document.addEventListener('click', function(event) {
     let popUp = document.getElementById('PopUp');
     let mediumButton = document.getElementById('medium');
     
+    // Popup dışına tıklanırsa
     if (popUp && !popUp.contains(event.target)) {
-        // Popup dışına tıklanırsa Medium'a odaklan
-        mediumButton.focus();
-    } else if (popUp && popUp.contains(event.target)) {
-        // Popup içindeki butonlar kontrolü
-        let isButton = event.target.closest('button');
+        mediumButton.focus();  // Medium'a odaklan
+    } else {
+        // Popup içine tıklanmışsa, tıklanan elementi daha detaylı kontrol edelim
+        let targetElement = event.target;
 
-        // Eğer tıklanan nesne buton değilse ve içinde 'DifficultyButton' class'ı yoksa
-        if (isButton && !isButton.classList.contains('DifficultyButton')) {
-            // Butonlar dışındaki herhangi bir yere tıklanırsa ve tıklanan 'DifficultyButton' sınıfına sahip değilse
-            mediumButton.focus();
+        // Eğer tıklanan bir buton ise ve bu buton DifficultyButton sınıfına aitse
+        if (targetElement.tagName === 'BUTTON' && targetElement.classList.contains('DifficultyButton')) {
+            // Bu durumda odaklanma o butonda kalacak, ekstra bir işlem yapmamıza gerek yok
+            return;
+        } else if (targetElement.tagName === 'BUTTON') {
+            // Diğer butonlar için de özel bir işlem yapmaya gerek yok
+            return;
+        } else {
+            // Popup içindeki butonlar dışındaki herhangi bir yere tıklanırsa
+            mediumButton.focus();  // Medium'a odaklan
         }
-        // Not: 'DifficultyButton' sınıfına sahip butonlara tıklandığında odaklanma değişmeyecek ve o butonda kalacaktır.
     }
 });
+
 
 
 
