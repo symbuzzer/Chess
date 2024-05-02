@@ -834,29 +834,17 @@ function makePopUp(event) {
     let popUpBody = "<div class='PopUpBody'>" + difficultyText + normal + tough + hard + br + br + popUpBodyText + whiteButton + blackButton + "</div>";
     let popUp = "<div id='PopUp' onclick='event.stopPropagation();'>" + popUpHeader + popUpBody + "</div>";
 
-    // Popup'ı gövdeye ekleme
     body.innerHTML += popUp;
     controlGroup.style.display = 'none';
 
-    // Butonlara olay işleyicileri ekleme
     document.getElementById('easy').addEventListener('click', function() { chooseDifficulty(2); });
     document.getElementById('medium').addEventListener('click', function() { chooseDifficulty(3); });
     document.getElementById('hard').addEventListener('click', function() { chooseDifficulty(4); });
     document.getElementById('whiteButton').addEventListener('click', function() { chooseSide('White'); });
     document.getElementById('blackButton').addEventListener('click', function() { chooseSide('Black'); });
 
-    // İlk odaklanma Medium butonuna
-    document.getElementById('medium').focus();
 }
 
-// Sayfa genelindeki tıklamaları dinleme ve gerektiğinde Medium butonuna odaklama
-document.addEventListener('click', function(event) {
-    let popUp = document.getElementById('PopUp');
-    let mediumButton = document.getElementById('medium');
-    if (!popUp.contains(event.target)) {
-        mediumButton.focus();  // Popup dışına tıklanırsa Medium'a odaklan
-    }
-});
 
 
 function makePromotion(color, i, j){
