@@ -137,10 +137,11 @@ body {
     .MainContainer {
         flex-direction: row;
         justify-content: space-around;
-        min-height: 100vh;
+        min-height: auto;
     }
     .Container, .CapturedPiecesContainer {
         margin-bottom: 0;
+        height: auto;
     }
 }
 
