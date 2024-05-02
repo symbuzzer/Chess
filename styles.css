@@ -9,6 +9,10 @@
 
 .Header{
     position: fixed;
+    top: 0;           /* Üst kenardan başlamasını sağlar */
+    left: 0;          /* Sol kenardan başlamasını sağlar */
+    width: 100%;      /* Genişliği tüm sayfa boyutunu kapsayacak şekilde ayarlar */
+    z-index: 1000;    /* Header'ın diğer elementlerin üzerinde kalmasını sağlar */
     background-color: #49A220;
     padding: 3%;
     font-family: 'Montserrat', sans-serif;
