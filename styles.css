@@ -78,6 +78,7 @@ body {
     font-size: larger;
     transition: .2s;
 }
+
 .LinkItem:hover{
     color: gray;
     transition: .2s;
@@ -89,6 +90,7 @@ body {
     font-family: 'Montserrat', sans-serif;    color: rgb(73, 162, 32);
     margin-left: 5%;
 }
+
 .rankNumber{
     font-size: large;
     position: absolute;
@@ -206,15 +208,13 @@ body {
     padding-bottom: 10%;         /* Alt boşluk */
     border-radius: 10px;         /* Kenar yuvarlaklığı */
     position: fixed;             /* Pozisyon sabit */
-    top: 50%;                    /* Üstten yüzde 50 */
-    left: 50%;                   /* Soldan yüzde 50 */
+    top: 55%;                    /* Üstten yüzde 50 */
+    left: 45%;                   /* Soldan yüzde 50 */
     transform: translate(-50%, -50%); /* Yatay ve dikey merkezleme */
     z-index: 10;                 /* Z-index */
     background-color: #f2f2f2;   /* Arka plan rengi */
     box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.4); /* Gölge */
     display: block;              /* Display tipi */
-    animation-name: PopUp;       /* Animasyon adı */
-    animation-duration: 1s;      /* Animasyon süresi */
 }
 
 .PopUpHeader{
@@ -278,8 +278,6 @@ body {
 .DifficultyButton:focus{
     background-color: #5286ff;
 }
-
-
 
 /*Pawn promotion*/
 #Promotion{
@@ -358,7 +356,6 @@ body {
     cursor: pointer;
 }
 
-
 .drawButton{
     width: auto; 
     background-color: #797979;
@@ -400,11 +397,13 @@ body {
     font-family: 'Roboto', sans-serif;
     transition: 0.2s;
 }
+
 .newButton:hover{
     background-color:  #251cbc;
     transition: 0.2s;
     cursor: pointer;
 }
+
 .newButton:active{
     transform: scale(0.95);
 }
@@ -420,6 +419,7 @@ body {
     float: right; font-weight: 300; font-size:larger; color: lightgray;
     padding-top: 1.5vh;
 }
+
 nav {
     display: flex;
     justify-content: space-around;
@@ -437,6 +437,7 @@ nav {
     vertical-align: middle;
     z-index: 0;
 }
+
 @media screen and (max-width: 1000px){
     .Container{
         width: 80vw;
@@ -506,8 +507,6 @@ nav {
     background-color: #cfe2d2;
 }
 
-
-
 .brownButton{
     background-color: #d99d43;
     border: none;
@@ -521,6 +520,7 @@ nav {
     margin-left: 5px;
     margin-right: 5px;
 }
+
 .blueButton{
     background-color: #51aff3;
     border: none;
@@ -534,6 +534,7 @@ nav {
     margin-left: 5px;
     margin-right: 5px;
 }
+
 .greenButton{
     background-color: #51b035;
     border: none;
@@ -547,8 +548,6 @@ nav {
     margin-left: 5px;
     margin-right: 5px;
 }
-
-
 
 .brownButton:focus, .blueButton:focus, .greenButton:focus{
     border: 2px solid black;
