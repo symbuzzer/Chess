@@ -820,22 +820,34 @@ function makePopUp(event) {
     let body = document.getElementsByClassName('Container')[0];
     let controlGroup = document.getElementsByClassName('control-group')[0];
 
+    // Popup yapısını oluşturma
     let popUpHeader = "<div class='PopUpHeader'><h1 class='PopUpText'>" + event + "</h1></div>";
     let popUpBodyText = "<h1 class='PopUpBodyText'>Choose Side:</h1>";
-    let whiteButton = "<button onclick='chooseSide(\"White\");' class='ChooseSideButton'><img src='Images/Pieces/WhiteKing.png' height='50vw'></button>";
-    let blackButton = "<button onclick='chooseSide(\"Black\");' class='ChooseSideButton'><img src='Images/Pieces/BlackKing.png' height='50vw'></button>";
+    let whiteButton = "<button id='whiteButton' class='ChooseSideButton'><img src='Images/Pieces/WhiteKing.png' height='50vw'></button>";
+    let blackButton = "<button id='blackButton' class='ChooseSideButton'><img src='Images/Pieces/BlackKing.png' height='50vw'></button>";
     let difficultyText = "<h2 class='PopUpBodyText' style='margin-top: 8px;'>Choose Difficulty:</h2>";
-    let normal = "<button id='easy' onclick='chooseDifficulty(2)' class='ChooseSideButton DifficultyButton'>Easy</button>";
-    let tough = "<button id='medium' onclick='chooseDifficulty(3)' class='ChooseSideButton DifficultyButton'>Medium</button>";
-    let hard = "<button id='hard' onclick='chooseDifficulty(4)' class='ChooseSideButton DifficultyButton'>Hard</button>";
+    let normal = "<button id='easy' class='ChooseSideButton DifficultyButton'>Easy</button>";
+    let tough = "<button id='medium' class='ChooseSideButton DifficultyButton'>Medium</button>";
+    let hard = "<button id='hard' class='ChooseSideButton DifficultyButton'>Hard</button>";
     let br = "<br>";
     let popUpBody = "<div class='PopUpBody'>" + difficultyText + normal + tough + hard + br + br + popUpBodyText + whiteButton + blackButton + "</div>";
     let popUp = "<div id='PopUp' onclick='event.stopPropagation()'>" + popUpHeader + popUpBody + "</div>";
 
+    // Popup'ı gövdeye ekleme
     body.innerHTML += popUp;
     controlGroup.style.display = 'none';
+
+    // Tüm düğmelere olay işleyicileri ekleniyor
+    document.getElementById('easy').onclick = function() { chooseDifficulty(2); };
+    document.getElementById('medium').onclick = function() { chooseDifficulty(3); };
+    document.getElementById('hard').onclick = function() { chooseDifficulty(4); };
+    document.getElementById('whiteButton').onclick = function() { chooseSide('White'); };
+    document.getElementById('blackButton').onclick = function() { chooseSide('Black'); };
+
+    // Medium düğmesine otomatik odaklama
     document.getElementById('medium').focus();
 }
+
 
 
 function makePromotion(color, i, j){
