@@ -137,12 +137,6 @@ body {
     overflow: hidden;
 }
 
-@media (min-width: 768px) {
-    .MainContainer {
-        flex-direction: row;
-    }
-}
-
 .WhitePiecesCaptured{
     float: left;
     width: 40%;
