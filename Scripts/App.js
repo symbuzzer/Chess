@@ -831,22 +831,34 @@ function makePopUp(event) {
     let hard = "<button id='hard' class='ChooseSideButton DifficultyButton'>Hard</button>";
     let br = "<br>";
     let popUpBody = "<div class='PopUpBody'>" + difficultyText + normal + tough + hard + br + br + popUpBodyText + whiteButton + blackButton + "</div>";
-    let popUp = "<div id='PopUp' onclick='event.stopPropagation()'>" + popUpHeader + popUpBody + "</div>";
+    let popUp = "<div id='PopUp' onclick='event.stopPropagation(); ensureFocus();'>" + popUpHeader + popUpBody + "</div>";
 
     // Popup'ı gövdeye ekleme
     body.innerHTML += popUp;
     controlGroup.style.display = 'none';
 
-    // Tüm düğmelere olay işleyicileri ekleniyor
-    document.getElementById('easy').onclick = function() { chooseDifficulty(2); };
-    document.getElementById('medium').onclick = function() { chooseDifficulty(3); };
-    document.getElementById('hard').onclick = function() { chooseDifficulty(4); };
-    document.getElementById('whiteButton').onclick = function() { chooseSide('White'); };
-    document.getElementById('blackButton').onclick = function() { chooseSide('Black'); };
-
     // Medium düğmesine otomatik odaklama
+    ensureFocus();
+
+    // Tüm düğmelere olay işleyicileri
+    document.getElementById('easy').addEventListener('click', function() { chooseDifficulty(2); });
+    document.getElementById('medium').addEventListener('click', function() { chooseDifficulty(3); });
+    document.getElementById('hard').addEventListener('click', function() { chooseDifficulty(4); });
+    document.getElementById('whiteButton').addEventListener('click', function() { chooseSide('White'); });
+    document.getElementById('blackButton').addEventListener('click', function() { chooseSide('Black'); });
+}
+
+function ensureFocus() {
     document.getElementById('medium').focus();
 }
+
+document.addEventListener('click', function(event) {
+    let popUp = document.getElementById('PopUp');
+    if (popUp && !popUp.contains(event.target)) {
+        ensureFocus(); // Popup dışına tıklanırsa odaklanmayı sağlar
+    }
+});
+
 
 
 
