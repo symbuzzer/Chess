@@ -823,29 +823,27 @@ function chooseDifficulty(d) {
 }
 
 function chooseSide(side) {
-    if (!selectedSide) {
-        selectedSide = side;
-        gameOver = false;
-        gameStarted = true;
-        movesPlayed = 0;
-        createBoard();
-        Board.Side = side;
+    selectedSide = side;
+    gameOver = false;
+    gameStarted = true;
+    movesPlayed = 0;
+    createBoard();
+    Board.Side = side;
 
-        if (side == "White") {
-            OpponentSide = "Black";
-        } else if (side == "Black") {
-            OpponentSide = "White";
-        }
-
-        setPieces();
-        drawBoard();
-        resetPotentialChecks(Board);
-        checkAndStartGame();
+    if (side == "White") {
+        OpponentSide = "Black";
+    } else if (side == "Black") {
+        OpponentSide = "White";
     }
+
+    setPieces();
+    drawBoard();
+    resetPotentialChecks(Board);
+    checkAndStartGame();
 }
 
 function checkAndStartGame() {
-    if (selectedDifficulty !== null && selectedSide !== null && !gameStarted) {
+    if (selectedDifficulty !== null && selectedSide !== null) {
         startGame();
     }
 }
