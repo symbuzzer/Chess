@@ -840,7 +840,7 @@ function makePopUp(event) {
 
 }
 
-function startGame
+function startGame(){
     let popUp = document.getElementById("PopUp");
     popUp.remove();
     let controlGroup = document.querySelector('.control-group');
