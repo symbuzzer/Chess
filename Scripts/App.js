@@ -563,6 +563,8 @@ function resetTurnsAndAnalyzeCheckmates(){
                     Board.Stalemate = true;
                     makePopUp("Draw<br>Stalemate");
                     gameOver = true;
+                    selectedDifficulty = null;
+                    selectedSide = null;
                     gameStarted = false
                 }
             }
@@ -621,6 +623,8 @@ function resetTurnsAndAnalyzeCheckmates(){
                     makePopUp("Draw<br>Stalemate");
                     gameOver = true;
                     gameStarted = false;
+                    selectedDifficulty = null;
+                    selectedSide = null;
                 }
             }
         }
@@ -630,11 +634,12 @@ function resetTurnsAndAnalyzeCheckmates(){
         if(Board.Side == "White"){
            makePopUp("Checkmate<br>You Win!");
         }else{
-            makePopUp("Checkmate<br>You Lose!");
+           makePopUp("Checkmate<br>You Lose!");
         }
         gameOver = true;
         gameStarted = false;
-
+        selectedDifficulty = null;
+        selectedSide = null;
     }
     if(Board.CheckMateOnWhite){
         if(Board.Side == "Black"){
@@ -644,6 +649,8 @@ function resetTurnsAndAnalyzeCheckmates(){
         }
         gameOver = true;
         gameStarted = false;
+        selectedDifficulty = null;
+        selectedSide = null;
     }
 
     calculateScore(Board, "White");
@@ -652,6 +659,8 @@ function resetTurnsAndAnalyzeCheckmates(){
         makePopUp("Draw<br>Insufficient Material");
         gameOver = true;
         gameStarted = false;
+        selectedDifficulty = null;
+        selectedSide = null;
     }
     if(Board.Turn == OpponentSide && !gameOver){
         setTimeout(function () {
@@ -663,6 +672,8 @@ function resign(){
     if(!gameOver && gameStarted){
         gameOver = true;
         gameStarted = false;
+        selectedDifficulty = null;
+        selectedSide = null;
         makePopUp("Resigned<br>You Lose");
     }
 }
@@ -675,6 +686,8 @@ function drawGame(){
             if(Board.WhiteScore - Board.BlackScore < 10){ //if the computer is not winning by a whole lot, it will be nice and accept the draw
                 gameOver = true;
                 gameStarted = false;
+                selectedDifficulty = null;
+                selectedSide = null;
                 makePopUp("Draw<br>By Agreement");
             }else{ //if the computer is clearlt winning, it will decline the draw
                 alert("The computer declined your draw offer!");
@@ -683,6 +696,8 @@ function drawGame(){
             if(Board.BlackScore - Board.WhiteScore < 10){ //if the computer is not winning by a whole lot, it will be nice and accept the draw
                 gameOver = true;
                 gameStarted = false;
+                selectedDifficulty = null;
+                selectedSide = null;
                 makePopUp("Draw<br>By Agreement");
             }else{ //if the computer is clearlt winning, it will decline the draw
                 alert("The computer declined your draw offer!");
@@ -701,6 +716,8 @@ function restart(){
     resetPotentialChecks(Board);
     makePopUp("New Game");
     gameOver = false;
+    selectedDifficulty = null;
+    selectedSide = null;
 }
 
 function copyBoard(B) {
