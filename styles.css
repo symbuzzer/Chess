@@ -13,10 +13,10 @@ body {
 
 .Header{
     position: fixed;
-    top: 0;           /* Üst kenardan başlamasını sağlar */
-    left: 0;          /* Sol kenardan başlamasını sağlar */
-    width: 100%;      /* Genişliği tüm sayfa boyutunu kapsayacak şekilde ayarlar */
-    z-index: 1000;    /* Header'ın diğer elementlerin üzerinde kalmasını sağlar */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
     background-color: #49A220;
     padding: 3%;
     font-family: 'Montserrat', sans-serif;
@@ -113,16 +113,16 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: calc(100vh - 70px); /* footer'ın yüksekliği tahmini bir değer olabilir */
+    min-height: calc(100vh - 70px);
     margin: 0;
     padding: 0;
-    padding-bottom: 70px; /* Footer yüksekliği kadar padding-bottom ekleyin */
+    padding-bottom: 70px;
 }
 
 .Container {
     height: 40vw;
     width: 40vw;
-    margin-bottom: 1.5em; /* Alt div ile arada boşluk bırak */
+    margin-bottom: 1.5em;
     overflow: visible;
 }
 
@@ -137,12 +137,11 @@ body {
     .MainContainer {
         flex-direction: row;
         justify-content: space-around;
-        min-height: 50vh;
+        min-height: 40vh;
     }
     .Container {
-        height: 25vw;
-        width: 25vw;
-        margin-bottom: 1.5em; /* Alt div ile arada boşluk bırak */
+        height: 40vw;
+        width: 40vw;
         overflow: visible;
     }
     .Container, .CapturedPiecesContainer {
