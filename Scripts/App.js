@@ -99,6 +99,7 @@ function setTheme(t){
         }
     }    
 }
+
 function chooseSide(side) {
     gameOver = false;
     gameStarted = true;
@@ -106,24 +107,28 @@ function chooseSide(side) {
     createBoard();
     Board.Side = side;
 
-    if(side == "White"){
+    if (side == "White") {
         OpponentSide = "Black";
-        
-    }else if(side == "Black"){
+    } else if (side == "Black") {
         OpponentSide = "White";
     }
 
     let popUp = document.getElementById("PopUp");
     popUp.remove();
-    controlGroup.style.display = 'block';
 
     setPieces();
     drawBoard();
     resetPotentialChecks(Board);
-    if(Board.Turn == OpponentSide){
+    if (Board.Turn == OpponentSide) {
         calculateOpponentMove(); //white -> computer goes first
     }
+
+    // Make the control-group visible
+    let controlGroup = document.querySelector('.control-group');
+    controlGroup.style.display = 'block'; // or use 'visibility: visible;' if using visibility in CSS
 }
+
+
 function setPieces() {
 
     if (Board.Side == "White") {
@@ -830,7 +835,6 @@ function makePopUp(event) {
     body.innerHTML += popUp;
     controlGroup.style.display = 'none';
 
-    // Dışarıya tıklanınca kapat
     document.addEventListener('click', function closePopUp(event) {
         let popUp = document.getElementById('PopUp');
         if (popUp) {
