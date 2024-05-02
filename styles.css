@@ -104,37 +104,32 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: calc(100vh - 70px);
+    min-height: calc(100vh - 70px); /* footer'ın yüksekliği tahmini bir değer olabilir */
     margin: 0;
     padding: 0;
-    padding-bottom: 70px;
+    padding-bottom: 70px; /* Footer yüksekliği kadar padding-bottom ekleyin */
 }
 
 .Container {
     height: 40vw;
     width: 40vw;
-    max-width: 400px; /* Maksimum genişliği sınırlandırın */
-    max-height: 400px; /* Maksimum yüksekliği sınırlandırın */
-    margin-bottom: 1.5em;
+    margin-bottom: 1.5em; /* Alt div ile arada boşluk bırak */
     overflow: visible;
 }
 
 .CapturedPiecesContainer {
     height: 20vw;
     width: 40vw;
-    max-width: 400px; /* Maksimum genişliği sınırlandırın */
-    max-height: 200px; /* Maksimum yüksekliği sınırlandırın */
     padding-top: 10px;
     overflow: hidden;
 }
 
-/* Geniş ekranlar için medya sorgusu */
 @media (min-width: 768px) {
     .MainContainer {
         flex-direction: row;
         justify-content: space-around;
         min-height: 100vh;
-        padding-bottom: 0;
+        padding-bottom: 0; /* Geniş ekranlarda alt padding'i kaldır */
     }
     .Container, .CapturedPiecesContainer {
         margin-bottom: 0;
