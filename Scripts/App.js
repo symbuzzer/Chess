@@ -100,28 +100,6 @@ function setTheme(t){
     }    
 }
 
-function chooseSide(side) {
-    gameOver = false;
-    gameStarted = true;
-    movesPlayed = 0; //for computer
-    createBoard();
-    Board.Side = side;
-
-    if (side == "White") {
-        OpponentSide = "Black";
-    } else if (side == "Black") {
-        OpponentSide = "White";
-    }
-
-    setPieces();
-    drawBoard();
-    resetPotentialChecks(Board);
-    if (Board.Turn == OpponentSide) {
-        calculateOpponentMove(); //white -> computer goes first
-    }
-}
-
-
 function setPieces() {
 
     if (Board.Side == "White") {
@@ -724,9 +702,7 @@ function restart(){
     makePopUp("New Game");
     gameOver = false;
 }
-function chooseDifficulty(d){
-    depth = d;
-}
+
 function copyBoard(B) {
 
     let p = undefined; //currentSelecyed piece
@@ -840,12 +816,39 @@ function makePopUp(event) {
 
 }
 
+function chooseDifficulty(d){
+    depth = d;
+}
+
+function chooseSide(side) {
+    gameOver = false;
+    gameStarted = true;
+    movesPlayed = 0; //for computer
+    createBoard();
+    Board.Side = side;
+
+    if (side == "White") {
+        OpponentSide = "Black";
+    } else if (side == "Black") {
+        OpponentSide = "White";
+    }
+
+}
+
 function startGame(){
     let popUp = document.getElementById("PopUp");
     popUp.remove();
     let controlGroup = document.querySelector('.control-group');
     controlGroup.style.display = 'block';
+
+    setPieces();
+    drawBoard();
+    resetPotentialChecks(Board);
+    if (Board.Turn == OpponentSide) {
+        calculateOpponentMove(); //white -> computer goes first
+    }
 }
+
 
 function makePromotion(color, i, j){
     let node = document.createElement("div");
