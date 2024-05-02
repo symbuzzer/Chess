@@ -793,7 +793,6 @@ function makePopUp(event) {
     let body = document.getElementsByClassName('Container')[0];
     let controlGroup = document.getElementsByClassName('control-group')[0];
 
-    // Popup yapısını oluşturma
     let popUpHeader = "<div class='PopUpHeader'><h1 class='PopUpText'>" + event + "</h1></div>";
     let difficultyText = "<h2 class='PopUpBodyText' style='margin-top: 8px;'>Choose Difficulty:</h2>";
     let normal = "<button id='easy' class='ChooseSideButton DifficultyButton'>Easy</button>";
@@ -815,21 +814,38 @@ function makePopUp(event) {
     document.getElementById('hard').addEventListener('click', function() { chooseDifficulty(4); });
     document.getElementById('whiteButton').addEventListener('click', function() { chooseSide('White'); });
     document.getElementById('blackButton').addEventListener('click', function() { chooseSide('Black'); });
-    document.getElementById('start').addEventListener('click', function() { attemptStartGame(); });
+    document.getElementById('start').addEventListener('click', checkAndStartGame);
 }
 
 function chooseDifficulty(d) {
     selectedDifficulty = d;
-    attemptStartGame();
+    checkAndStartGame();
 }
 
 function chooseSide(side) {
-    selectedSide = side;
-    attemptStartGame();
+    if (!selectedSide) {
+        selectedSide = side;
+        gameOver = false;
+        gameStarted = true;
+        movesPlayed = 0;
+        createBoard();
+        Board.Side = side;
+
+        if (side == "White") {
+            OpponentSide = "Black";
+        } else if (side == "Black") {
+            OpponentSide = "White";
+        }
+
+        setPieces();
+        drawBoard();
+        resetPotentialChecks(Board);
+        checkAndStartGame();
+    }
 }
 
-function attemptStartGame() {
-    if (selectedDifficulty !== null && selectedSide !== null) {
+function checkAndStartGame() {
+    if (selectedDifficulty !== null && selectedSide !== null && !gameStarted) {
         startGame();
     }
 }
@@ -839,11 +855,12 @@ function startGame(){
     popUp.remove();
     let controlGroup = document.querySelector('.control-group');
     controlGroup.style.display = 'block';
+
     if (Board.Turn == OpponentSide) {
-        calculateOpponentMove(); //white -> computer goes first
+        calculateOpponentMove(); // If the opponent's turn, computer moves first
     }
-    console.log('Game started with difficulty:', selectedDifficulty, 'and side:', selectedSide);
 }
+
 
 
 function makePromotion(color, i, j){
