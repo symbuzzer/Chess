@@ -834,6 +834,13 @@ function makePopUp(event) {
 
     body.innerHTML += popUp;
     controlGroup.style.display = 'none';
+
+    setTimeout(() => {
+        var mediumButton = document.querySelector('.DifficultyButton');
+        if (mediumButton) {
+            mediumButton.focus();
+        }
+    }, 10);
     
     document.addEventListener('click', function(event) {
        var popUp = document.getElementById('PopUp');
