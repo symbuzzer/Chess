@@ -52,6 +52,7 @@ body {
     right: 0;
     bottom: 0;
     background-color: #49A220;
+    z-index: 1000;
     padding: 2%;
     font-family: 'Montserrat', sans-serif;
     color: whitesmoke;
@@ -67,6 +68,7 @@ body {
 
 .headerTitle{
     font-size: xx-large;
+    z-index: 1000;
 }
 
 .LinkItem{
