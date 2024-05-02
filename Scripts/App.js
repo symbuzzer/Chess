@@ -786,6 +786,9 @@ function copyBoard(B) {
 }
 
 
+let selectedDifficulty = null;
+let selectedSide = null;
+
 function makePopUp(event) {
     let body = document.getElementsByClassName('Container')[0];
     let controlGroup = document.getElementsByClassName('control-group')[0];
@@ -812,31 +815,23 @@ function makePopUp(event) {
     document.getElementById('hard').addEventListener('click', function() { chooseDifficulty(4); });
     document.getElementById('whiteButton').addEventListener('click', function() { chooseSide('White'); });
     document.getElementById('blackButton').addEventListener('click', function() { chooseSide('Black'); });
-    document.getElementById('start').addEventListener('click', function() { startGame(); });
-
+    document.getElementById('start').addEventListener('click', function() { attemptStartGame(); });
 }
 
-function chooseDifficulty(d){
-    depth = d;
+function chooseDifficulty(d) {
+    selectedDifficulty = d;
+    attemptStartGame();
 }
 
 function chooseSide(side) {
-    gameOver = false;
-    gameStarted = true;
-    movesPlayed = 0; //for computer
-    createBoard();
-    Board.Side = side;
+    selectedSide = side;
+    attemptStartGame();
+}
 
-    if (side == "White") {
-        OpponentSide = "Black";
-    } else if (side == "Black") {
-        OpponentSide = "White";
+function attemptStartGame() {
+    if (selectedDifficulty !== null && selectedSide !== null) {
+        startGame();
     }
-
-    setPieces();
-    drawBoard();
-    resetPotentialChecks(Board);
-
 }
 
 function startGame(){
@@ -844,10 +839,10 @@ function startGame(){
     popUp.remove();
     let controlGroup = document.querySelector('.control-group');
     controlGroup.style.display = 'block';
-
     if (Board.Turn == OpponentSide) {
         calculateOpponentMove(); //white -> computer goes first
     }
+    console.log('Game started with difficulty:', selectedDifficulty, 'and side:', selectedSide);
 }
 
 
