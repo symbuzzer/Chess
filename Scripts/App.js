@@ -843,6 +843,9 @@ function makePopUp(event) {
     document.getElementById('hard').addEventListener('click', function() { chooseDifficulty(4); });
     document.getElementById('whiteButton').addEventListener('click', function() { chooseSide('White'); });
     document.getElementById('blackButton').addEventListener('click', function() { chooseSide('Black'); });
+
+    // İlk odaklanma Medium butonuna
+    document.getElementById('medium').focus();
 }
 
 // Sayfa genelindeki tıklamaları dinleme ve gerektiğinde Medium butonuna odaklama
@@ -853,10 +856,6 @@ document.addEventListener('click', function(event) {
         mediumButton.focus();  // Popup dışına tıklanırsa Medium'a odaklan
     }
 });
-
-
-
-
 
 function makePromotion(color, i, j){
     let node = document.createElement("div");
