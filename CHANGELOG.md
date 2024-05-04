@@ -1,3 +1,6 @@
+## v1.1.2
+- Disabled zoom
+
 ## v1.1.1
 - Fixed game setting menu
 
