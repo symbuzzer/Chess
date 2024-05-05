@@ -280,6 +280,13 @@ body {
     transform: scale(0.95);
 }
 
+.ChooseDifficultyButtonContainer{
+    display: flex;
+    justify-content: center; /* Yatayda merkezleme */
+    align-items: center;     /* Dikeyde merkezleme, gerekirse */
+    width: 100%;             /* Konteynerin tam genişliği */
+}
+
 .ChooseDifficultyButton{
     background-color: #51b035;
     border: none;
