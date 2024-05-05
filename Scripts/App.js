@@ -839,13 +839,16 @@ function chooseDifficulty(d) {
   const allButtons = document.querySelectorAll('.ChooseDifficultyButton');
 
   allButtons.forEach(button => {
-    if (button.id !== d) {
-      button.classList.add('hidden'); // Add 'hidden' class to unselected buttons
+    if (button.id !== String(d)) {  // Şimdi 'd' değeri ile butonun id'sini doğru bir şekilde karşılaştırıyoruz
+      button.style.display = 'none';  // Butonu gizlemek için 'display' özelliğini 'none' olarak ayarlıyoruz
+    } else {
+      button.style.display = 'block'; // Seçilen buton görünür kalıyor
     }
   });
 
   checkAndStartGame();
 }
+
 
 
 function chooseSide(side) {
