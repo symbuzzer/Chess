@@ -833,23 +833,22 @@ function makePopUp(event) {
 }
 
 function chooseDifficulty(d) {
-    selectedDifficulty = d;
-    console.log("Chosen difficulty: " + d); // Hangi zorluk seviyesinin seçildiğini göster
+  selectedDifficulty = d;
+  console.log("Chosen difficulty: " + d);
 
-    const buttons = ['easy', 'medium', 'hard'];
-    buttons.forEach(buttonId => {
-        const button = document.getElementById(buttonId);
-        console.log(buttonId + " button display before: " + button.style.display); // Butonun önceki durumunu göster
-        if (buttonId !== d) {
-            button.style.display = 'none';
-        } else {
-            button.style.display = 'inline-block'; // Seçilen butonun görünür olmasını sağla
-        }
-        console.log(buttonId + " button display after: " + button.style.display); // Butonun sonraki durumunu göster
-    });
+  const buttons = ['easy', 'medium', 'hard'];
+  buttons.forEach(buttonId => {
+    const button = document.getElementById(buttonId);
+    if (buttonId === d) {
+      button.style.display = 'inline-block'; // Keep selected button visible
+    } else {
+      button.style.display = 'none'; // Hide other buttons
+    }
+  });
 
-    checkAndStartGame();
+  checkAndStartGame();
 }
+
 
 
 
