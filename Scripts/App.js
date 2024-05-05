@@ -836,19 +836,15 @@ function chooseDifficulty(d) {
   selectedDifficulty = d;
   console.log("Chosen difficulty: " + d);
 
-  const buttons = ['easy', 'medium', 'hard'];
-  buttons.forEach(buttonId => {
-    const button = document.getElementById(buttonId);
-    if (buttonId === d) {
-      button.style.display = 'inline-block';
-    } else {
-      button.style.display = 'none'; // Completely hide unselected buttons
-    }
+  const allButtons = document.querySelectorAll('.ChooseSideButton'); // Get all buttons
+  allButtons.forEach(button => {
+    button.style.display = 'none'; // Initially hide all buttons
   });
 
+  const selectedButton = document.getElementById(d); // Get selected button
+  selectedButton.style.display = 'inline-block'; // Show only selected button
   checkAndStartGame();
 }
-
 
 function chooseSide(side) {
     selectedSide = side;
