@@ -812,9 +812,9 @@ function makePopUp(event) {
 
     let popUpHeader = "<div class='PopUpHeader'><h1 class='PopUpText'>" + event + "</h1></div>";
     let difficultyText = "<h2 class='PopUpBodyText' style='margin-top: 8px;'>Choose Difficulty:</h2>";
-    let normal = "<button id='easy' class='ChooseSideButton DifficultyButton'>Easy</button>";
-    let tough = "<button id='medium' class='ChooseSideButton DifficultyButton'>Medium</button>";
-    let hard = "<button id='hard' class='ChooseSideButton DifficultyButton'>Hard</button>";
+    let normal = "<button id='easy' class='DifficultyButton'>Easy</button>";
+    let tough = "<button id='medium' class='DifficultyButton'>Medium</button>";
+    let hard = "<button id='hard' class='DifficultyButton'>Hard</button>";
     let popUpBodyText = "<h1 class='PopUpBodyText'>Choose Side:</h1>";
     let whiteButton = "<button id='whiteButton' class='ChooseSideButton'><img src='Images/Pieces/WhiteKing.png' height='50vw'></button>";
     let blackButton = "<button id='blackButton' class='ChooseSideButton'><img src='Images/Pieces/BlackKing.png' height='50vw'></button>";
@@ -836,7 +836,7 @@ function chooseDifficulty(d) {
   selectedDifficulty = d;
   console.log("Chosen difficulty: " + d);
 
-  const allButtons = document.querySelectorAll('.ChooseDiffButton'); // Get all buttons
+  const allButtons = document.querySelectorAll('.DifficultyButton'); // Get all buttons
   allButtons.forEach(button => {
     if (button.id === d) {
       // Skip the selected button
