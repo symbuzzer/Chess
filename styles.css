@@ -295,6 +295,7 @@ body {
     margin-right: 5px;
     font-family: 'Montserrat', sans-serif;
     justify-content: center;
+    display: flex;
 
 }
 
