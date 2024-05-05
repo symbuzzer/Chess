@@ -834,15 +834,23 @@ function makePopUp(event) {
 
 function chooseDifficulty(d) {
     selectedDifficulty = d;
-    ['easy', 'medium', 'hard'].forEach(levelId => {
-        if (levelId !== d) {
-            document.getElementById(levelId).style.display = 'none';
+    console.log("Chosen difficulty: " + d); // Hangi zorluk seviyesinin seçildiğini göster
+
+    const buttons = ['easy', 'medium', 'hard'];
+    buttons.forEach(buttonId => {
+        const button = document.getElementById(buttonId);
+        console.log(buttonId + " button display before: " + button.style.display); // Butonun önceki durumunu göster
+        if (buttonId !== d) {
+            button.style.display = 'none';
         } else {
-            document.getElementById(levelId).style.display = 'block';
+            button.style.display = 'inline-block'; // Seçilen butonun görünür olmasını sağla
         }
+        console.log(buttonId + " button display after: " + button.style.display); // Butonun sonraki durumunu göster
     });
+
     checkAndStartGame();
 }
+
 
 
 function chooseSide(side) {
