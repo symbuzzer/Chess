@@ -839,7 +839,6 @@ function chooseDifficulty(d) {
   const allButtons = document.querySelectorAll('.ChooseDifficultyButton');
 
   allButtons.forEach(button => {
-    button.style.display = ''; // Reset all buttons to visible
     if (button.id !== d) {
       button.classList.add('hidden'); // Add 'hidden' class to unselected buttons
     }
@@ -847,6 +846,7 @@ function chooseDifficulty(d) {
 
   checkAndStartGame();
 }
+
 
 function chooseSide(side) {
     selectedSide = side;
