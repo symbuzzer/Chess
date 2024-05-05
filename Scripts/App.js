@@ -851,6 +851,7 @@ function chooseDifficulty(d) {
   });
 
   document.getElementById(selectedButtonId).style.display = 'block';
+  checkAndStartGame();
 }
 
 function chooseSide(side) {
