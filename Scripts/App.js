@@ -839,18 +839,14 @@ function chooseDifficulty(d) {
   const buttons = ['easy', 'medium', 'hard'];
   buttons.forEach(buttonId => {
     const button = document.getElementById(buttonId);
+    button.classList.remove('SelectedDifficulty'); // Remove class from all buttons
     if (buttonId === d) {
-      button.style.display = 'inline-block'; // Keep selected button visible
-    } else {
-      button.style.display = 'none'; // Hide other buttons
+      button.classList.add('SelectedDifficulty'); // Add class to selected button
     }
   });
 
   checkAndStartGame();
 }
-
-
-
 
 function chooseSide(side) {
     selectedSide = side;
