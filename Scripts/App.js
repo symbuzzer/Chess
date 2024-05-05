@@ -802,7 +802,6 @@ function copyBoard(B) {
 
 }
 
-
 let selectedDifficulty = null;
 let selectedSide = null;
 
@@ -812,14 +811,18 @@ function makePopUp(event) {
 
     let popUpHeader = "<div class='PopUpHeader'><h1 class='PopUpText'>" + event + "</h1></div>";
     let difficultyText = "<h2 class='PopUpBodyText' style='margin-top: 8px;'>Choose Difficulty:</h2>";
-    let normal = "<button id='easy' class='ChooseDifficultyButton'>Easy</button>";
-    let tough = "<button id='medium' class='ChooseDifficultyButton'>Medium</button>";
-    let hard = "<button id='hard' class='ChooseDifficultyButton'>Hard</button>";
+    let difficultyButtons = `
+        <div class='ChooseDifficultyButtonContainer'>
+            <button id='easy' class='ChooseDifficultyButton'>Easy</button>
+            <button id='medium' class='ChooseDifficultyButton'>Medium</button>
+            <button id='hard' class='ChooseDifficultyButton'>Hard</button>
+        </div>
+    `;
     let popUpBodyText = "<h1 class='PopUpBodyText'>Choose Side:</h1>";
     let whiteButton = "<button id='whiteButton' class='ChooseSideButton'><img src='Images/Pieces/WhiteKing.png' height='50vw'></button>";
     let blackButton = "<button id='blackButton' class='ChooseSideButton'><img src='Images/Pieces/BlackKing.png' height='50vw'></button>";
     let br = "<br>";
-    let popUpBody = "<div class='PopUpBody'>" + difficultyText + normal + tough + hard + br + br + popUpBodyText + whiteButton + blackButton + "</div>";
+    let popUpBody = "<div class='PopUpBody'>" + difficultyText + difficultyButtons + br + br + popUpBodyText + whiteButton + blackButton + "</div>";
     let popUp = "<div id='PopUp' onclick='event.stopPropagation();'>" + popUpHeader + popUpBody + "</div>";
 
     body.innerHTML += popUp;
@@ -834,23 +837,20 @@ function makePopUp(event) {
 
 function chooseDifficulty(d) {
   selectedDifficulty = d;
-  console.log("Chosen difficulty: " + d);
-
-  // Zorluk seviyelerini ID'lere çevir
   const idMap = {
     2: 'easy',
     3: 'medium',
     4: 'hard'
   };
 
-  const selectedButtonId = idMap[d];  // Sayısal değeri ID string'ine çevir
+  const selectedButtonId = idMap[d];
 
   const allButtons = document.querySelectorAll('.ChooseDifficultyButton');
   allButtons.forEach(button => {
-    button.style.display = 'none';  // Önce tüm butonları gizle
+    button.style.display = 'none';
   });
 
-  document.getElementById(selectedButtonId).style.display = 'block';  // Seçilen butonu göster
+  document.getElementById(selectedButtonId).style.display = 'block';
 }
 
 function chooseSide(side) {
