@@ -836,19 +836,27 @@ function chooseDifficulty(d) {
   selectedDifficulty = d;
   console.log("Chosen difficulty: " + d);
 
-  const allButtons = document.querySelectorAll('.ChooseDifficultyButton');
+  // Zorluk dereceleri ile buton id'leri arasındaki eşlemeyi belirliyoruz
+  const difficultyIdMap = {
+    2: 'easy',
+    3: 'medium',
+    4: 'hard'
+  };
 
+  // Seçilen zorluk derecesine karşılık gelen buton id'sini alıyoruz
+  const selectedButtonId = difficultyIdMap[d];
+
+  const allButtons = document.querySelectorAll('.ChooseDifficultyButton');
   allButtons.forEach(button => {
-    if (button.id !== String(d)) {  // Şimdi 'd' değeri ile butonun id'sini doğru bir şekilde karşılaştırıyoruz
-      button.style.display = 'none';  // Butonu gizlemek için 'display' özelliğini 'none' olarak ayarlıyoruz
+    if (button.id !== selectedButtonId) {
+      button.style.display = 'none'; // Seçilmeyen butonları gizliyoruz
     } else {
-      button.style.display = 'block'; // Seçilen buton görünür kalıyor
+      button.style.display = 'block'; // Seçilen butonu görünür yapıyoruz
     }
   });
 
   checkAndStartGame();
 }
-
 
 
 function chooseSide(side) {
