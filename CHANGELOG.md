@@ -1,3 +1,6 @@
+## v1.1.3
+- Disabled widescreen devices
+
 ## v1.1.2
 - Disabled zoom
 
