@@ -837,10 +837,13 @@ function chooseDifficulty(d) {
     ['easy', 'medium', 'hard'].forEach(levelId => {
         if (levelId !== d) {
             document.getElementById(levelId).style.display = 'none';
+        } else {
+            document.getElementById(levelId).style.display = 'block';
         }
     });
     checkAndStartGame();
 }
+
 
 function chooseSide(side) {
     selectedSide = side;
