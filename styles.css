@@ -276,6 +276,32 @@ body {
     transform: scale(0.95);
 }
 
+.ChooseDifficultyButton{
+    background-color: #51b035;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    position: relative;
+    margin-top: 10px;
+    transition: 0.2s;
+    height: auto;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.ChooseDifficultyButton:hover{
+    background-color: #2f711b;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.ChooseDifficultyButton:active{
+    transform: scale(0.95);
+}
+
 .DifficultyButton{
     background-color: #51b035;
 }
