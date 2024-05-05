@@ -1053,3 +1053,10 @@ function updateTheme() {
 function restartGame() {
     window.location.reload();
 }
+
+function redirectIfLargeScreen() {
+  var widthThreshold = 1024;
+  if (window.innerWidth > widthThreshold) {
+    window.location.href = 'error.html';
+  }
+}
