@@ -836,7 +836,7 @@ function chooseDifficulty(d) {
   selectedDifficulty = d;
   console.log("Chosen difficulty: " + d);
 
-  const allButtons = document.querySelectorAll('.DifficultyButton'); // Get all buttons
+  const allButtons = document.querySelectorAll('.ChooseDifficultyButton'); // Get all buttons
   allButtons.forEach(button => {
     if (button.id === d) {
       // Skip the selected button
