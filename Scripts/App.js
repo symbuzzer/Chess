@@ -834,8 +834,8 @@ function makePopUp(event) {
 
 function chooseDifficulty(d) {
     selectedDifficulty = d;
-    ['easy', 'medium', 'hard'].forEach(id => {
-        if (id !== d.toString()) document.getElementById(id).style.display = 'none';
+    ['easy', 'medium', 'hard'].forEach(levelId => {
+        if (levelId !== d.toString()) document.getElementById(levelId).style.display = 'none';
     });
     checkAndStartGame();
 }
