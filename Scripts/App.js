@@ -836,28 +836,25 @@ function chooseDifficulty(d) {
   selectedDifficulty = d;
   console.log("Chosen difficulty: " + d);
 
-  // Zorluk dereceleri ile buton id'leri arasındaki eşlemeyi belirliyoruz
   const difficultyIdMap = {
     2: 'easy',
     3: 'medium',
     4: 'hard'
   };
 
-  // Seçilen zorluk derecesine karşılık gelen buton id'sini alıyoruz
   const selectedButtonId = difficultyIdMap[d];
 
   const allButtons = document.querySelectorAll('.ChooseDifficultyButton');
   allButtons.forEach(button => {
     if (button.id !== selectedButtonId) {
-      button.style.display = 'none'; // Seçilmeyen butonları gizliyoruz
+      button.style.display = 'none';
     } else {
-      button.style.display = 'block'; // Seçilen butonu görünür yapıyoruz
+      button.style.display = 'block';
     }
   });
 
   checkAndStartGame();
 }
-
 
 function chooseSide(side) {
     selectedSide = side;
@@ -897,8 +894,6 @@ function startGame(){
         calculateOpponentMove(); // If the opponent's turn, computer moves first
     }
 }
-
-
 
 function makePromotion(color, i, j){
     let node = document.createElement("div");
