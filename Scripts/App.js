@@ -833,16 +833,14 @@ function makePopUp(event) {
 }
 
 function chooseDifficulty(d) {
-    console.log("Selected difficulty:", d);
     selectedDifficulty = d;
-
     ['easy', 'medium', 'hard'].forEach(levelId => {
-        if (levelId !== d) document.getElementById(levelId).style.display = 'none';
+        if (levelId !== d) {
+            document.getElementById(levelId).style.display = 'none';
+        }
     });
-
     checkAndStartGame();
 }
-
 
 function chooseSide(side) {
     selectedSide = side;
