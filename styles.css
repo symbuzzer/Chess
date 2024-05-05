@@ -294,9 +294,6 @@ body {
     margin-left: 5px;
     margin-right: 5px;
     font-family: 'Montserrat', sans-serif;
-    justify-content: center;
-    display: flex;
-
 }
 
 .ChooseDifficultyButton:hover{
