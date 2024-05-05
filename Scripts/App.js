@@ -834,6 +834,9 @@ function makePopUp(event) {
 
 function chooseDifficulty(d) {
     selectedDifficulty = d;
+    ['easy', 'medium', 'hard'].forEach(id => {
+        if (id !== d.toString()) document.getElementById(id).style.display = 'none';
+    });
     checkAndStartGame();
 }
 
@@ -844,6 +847,8 @@ function chooseSide(side) {
     movesPlayed = 0;
     createBoard();
     Board.Side = side;
+
+    document.getElementById(side === 'White' ? 'blackButton' : 'whiteButton').style.display = 'none';
 
     if (side == "White") {
         OpponentSide = "Black";
