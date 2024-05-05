@@ -836,13 +836,15 @@ function chooseDifficulty(d) {
   selectedDifficulty = d;
   console.log("Chosen difficulty: " + d);
 
-  const allButtons = document.querySelectorAll('.ChooseSideButton'); // Get all buttons
+  const allButtons = document.querySelectorAll('.ChooseDiffButton'); // Get all buttons
   allButtons.forEach(button => {
-    button.style.display = 'none'; // Initially hide all buttons
+    if (button.id === d) {
+      // Skip the selected button
+      return;
+    }
+    button.style.display = 'none'; // Hide unselected buttons
   });
 
-  const selectedButton = document.getElementById(d); // Get selected button
-  selectedButton.style.display = 'inline-block'; // Show only selected button
   checkAndStartGame();
 }
 
