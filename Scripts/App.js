@@ -822,7 +822,7 @@ function makePopUp(event) {
     let whiteButton = "<button id='whiteButton' class='ChooseSideButton'><img src='Images/Pieces/WhiteKing.png' height='50vw'></button>";
     let blackButton = "<button id='blackButton' class='ChooseSideButton'><img src='Images/Pieces/BlackKing.png' height='50vw'></button>";
     let br = "<br>";
-    let popUpBody = "<div class='PopUpBody'>" + difficultyText + difficultyButtons + br + br + popUpBodyText + whiteButton + blackButton + "</div>";
+    let popUpBody = "<div class='PopUpBody'>" + difficultyText + difficultyButtons + br + popUpBodyText + whiteButton + blackButton + "</div>";
     let popUp = "<div id='PopUp' onclick='event.stopPropagation();'>" + popUpHeader + popUpBody + "</div>";
 
     body.innerHTML += popUp;
