@@ -122,30 +122,30 @@ body {
 }
 
 .MainContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: calc(100vh - 70px);
-    margin: 0;
-    padding: 0;
-    padding-bottom: 70px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: large;
+  display: flex;
+  flex-wrap: nowrap; /* Ensures elements don't wrap onto multiple lines */
+  justify-content: space-between; /* Distributes space between elements */
+  align-items: center;
+  min-height: calc(100vh - 70px);
+  margin: 0;
+  padding: 0;
+  padding-bottom: 70px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: large;
 }
 
 .Container {
-    height: 40vw;
-    width: 40vw;
-    margin-bottom: 1.5em;
-    overflow: visible;
+  width: 40%; /* Adjust width as needed */
+  height: 40vw;
+  margin-bottom: 1.5em;
+  overflow: visible;
 }
 
 .CapturedPiecesContainer {
-    height: 20vw;
-    width: 40vw;
-    padding-top: 10px;
-    overflow: hidden;
+  width: 60%; /* Adjust width as needed, should add up to 100% with Container */
+  height: 40vw;
+  padding-top: 10px;
+  overflow: hidden; /* Optional, can be used if needed */
 }
 
 .WhitePiecesCaptured{
