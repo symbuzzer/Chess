@@ -17,8 +17,10 @@
 }
 
 html, body {
-    height: 100%;
-    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Tüm ekranı kapsayacak şekilde yükseklik ayarla */
+    overflow: hidden; /* Yatay ve dikey kaydırmayı engelle */
 }
 
 body {
@@ -128,22 +130,24 @@ body {
 
 .MainContainer {
     display: flex;
-    flex-direction: row; /* Sütun yerine satır olarak elemanları yan yana diz */
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 70px); /* Footer ve header yüksekliklerini hesaplayarak tam ekran yap */
+    flex-direction: row; /* İçerikleri yan yana getir */
+    justify-content: center; /* İçerikleri yatay olarak ortala */
+    align-items: center; /* İçerikleri dikey olarak ortala */
+    height: calc(100vh - 100px); /* Header ve footer yüksekliklerini çıkar */
+    width: 100vw; /* Genişliği ekran genişliği kadar yap */
     margin: 0;
     padding: 0;
 }
 
 .Container, .CapturedPiecesContainer {
-    height: 80vh; /* Yükseklikleri orantılı ayarlayın */
-    width: 40vw; /* Genişlikleri yan yana sığacak şekilde ayarlayın */
-    margin: 0 10px; /* Aralarında boşluk bırakın */
+    height: 100%; /* Ana konteyner yüksekliğine uyarla */
+    width: 50%; /* İki konteyner yan yana sığacak şekilde genişlik ayarla */
+    box-sizing: border-box; /* Padding ve border dahil genişliği hesapla */
 }
 
-.CapturedPiecesContainer {
-    overflow: hidden;
+.Header, .Footer {
+    width: 100%; /* Başlık ve altbilgiyi tam genişlik yap */
+    position: fixed; /* Sabit konum */
 }
 
 .WhitePiecesCaptured{
