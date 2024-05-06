@@ -1,11 +1,9 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     text-decoration: none;
-    box-sizing: border-box; 
-    overflow-x: hidden; 
-  
-  }
+}
 
 .hidden {
   display: none; /* Hide the element */
@@ -17,10 +15,8 @@
 }
 
 html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%; /* Tüm ekranı kapsayacak şekilde yükseklik ayarla */
-    overflow: hidden; /* Yatay ve dikey kaydırmayı engelle */
+    height: 100%;
+    overflow: hidden;
 }
 
 body {
@@ -28,12 +24,12 @@ body {
     padding-bottom: 25px;
 }
 
-.Header{
+.Header {
     z-index: 1001;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    right: 0;
     background-color: #49A220;
     padding: 3%;
     font-family: 'Montserrat', sans-serif;
@@ -74,7 +70,6 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: whitesmoke;
     text-align: center;
-    margin: 0;
 }
 
 .footerLink{
@@ -130,24 +125,24 @@ body {
 
 .MainContainer {
     display: flex;
-    flex-direction: row; /* İçerikleri yan yana getir */
-    justify-content: center; /* İçerikleri yatay olarak ortala */
-    align-items: center; /* İçerikleri dikey olarak ortala */
-    height: calc(100vh - 100px); /* Header ve footer yüksekliklerini çıkar */
-    width: 100vw; /* Genişliği ekran genişliği kadar yap */
-    margin: 0;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     padding: 0;
+    position: absolute;
+    top: calc(3% + 70px);  /* 70px varsayılan bir başlık boyutu, padding 3%'dan elde edilir */
+    bottom: calc(2% + 70px);  /* 70px varsayılan bir footer boyutu, padding 2%'den elde edilir */
+    width: 100%;
 }
 
 .Container, .CapturedPiecesContainer {
+    width: 50%;  /* İki konteyner yan yana sığacak şekilde genişlik ayarla */
     height: 100%; /* Ana konteyner yüksekliğine uyarla */
-    width: 50%; /* İki konteyner yan yana sığacak şekilde genişlik ayarla */
-    box-sizing: border-box; /* Padding ve border dahil genişliği hesapla */
+    box-sizing: border-box;
 }
 
-.Header, .Footer {
-    width: 100%; /* Başlık ve altbilgiyi tam genişlik yap */
-    position: fixed; /* Sabit konum */
+.CapturedPiecesContainer {
+    overflow: hidden;
 }
 
 .WhitePiecesCaptured{
