@@ -303,16 +303,33 @@ function makeMove(oldI, oldJ, newI, newJ) {
 
     { //testing to see what happens if we move this piece. will it place the king in a check? make a deep copy of the board
 
-        let cloneBoard = copyBoard(Board);
-        cloneBoard.Squares[newI][newJ].piece = cloneBoard.Squares[oldI][oldJ].piece;
-        cloneBoard.Squares[oldI][oldJ].piece = undefined;
+    let cloneBoard = copyBoard(Board);
+    cloneBoard.Squares[newI][newJ].piece = cloneBoard.Squares[oldI][oldJ].piece;
+    cloneBoard.Squares[oldI][oldJ].piece = undefined;
 
-        cloneBoard.Squares[newI][newJ].piece.i = newI; //setting new coordinates of piece we just moved
-        cloneBoard.Squares[newI][newJ].piece.j = newJ; //setting new coordinates of piece we just moved
-        cloneBoard.Squares[newI][newJ].piece.moved = true;
+    cloneBoard.Squares[newI][newJ].piece.i = newI; //setting new coordinates of piece we just moved
+    cloneBoard.Squares[newI][newJ].piece.j = newJ; //setting new coordinates of piece we just moved
+    cloneBoard.Squares[newI][newJ].piece.moved = true;
 
-        resetPotentialChecks(cloneBoard); //we moved the piece and now we want to see if the king is in check
+    resetPotentialChecks(cloneBoard); //we moved the piece and now we want to see if the king is in check
 
+    // Check for check on opponent's king
+    let opponentColor = Board.Side == "White" ? "Black" : "White";
+    for (let i = 1; i < cloneBoard.Squares.length; i++) {
+      for (let j = 1; j < cloneBoard.Squares[i].length; j++) {
+        if (cloneBoard.Squares[i][j].piece != undefined) {
+          if (cloneBoard.Squares[i][j].piece.color == opponentColor) {
+            let pieceMoves = cloneBoard.Squares[i][j].piece.getMoves(cloneBoard);
+            for (let move of pieceMoves) {
+              if (move.i == cloneBoard.Squares[newI][newJ].piece.i && move.j == cloneBoard.Squares[newI][newJ].piece.j) {
+                safeToMove = false;
+                break; // No need to check further moves if king is in check
+              }
+            }
+          }
+        }
+      }
+    }
 
         if (cloneBoard.Side == "White" && cloneBoard.Squares[newI][newJ].piece.color == "White") { //making sure we are the ones making the move and not the opponent
             //are we in check?
