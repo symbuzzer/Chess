@@ -313,24 +313,6 @@ function makeMove(oldI, oldJ, newI, newJ) {
 
     resetPotentialChecks(cloneBoard); //we moved the piece and now we want to see if the king is in check
 
-    // Check for check on opponent's king
-    let opponentColor = Board.Side == "White" ? "Black" : "White";
-    for (let i = 1; i < cloneBoard.Squares.length; i++) {
-      for (let j = 1; j < cloneBoard.Squares[i].length; j++) {
-        if (cloneBoard.Squares[i][j].piece != undefined) {
-          if (cloneBoard.Squares[i][j].piece.color == opponentColor) {
-            let pieceMoves = cloneBoard.Squares[i][j].piece.getMoves(cloneBoard);
-            for (let move of pieceMoves) {
-              if (move.i == cloneBoard.Squares[newI][newJ].piece.i && move.j == cloneBoard.Squares[newI][newJ].piece.j) {
-                safeToMove = false;
-                break; // No need to check further moves if king is in check
-              }
-            }
-          }
-        }
-      }
-    }
-
         if (cloneBoard.Side == "White" && cloneBoard.Squares[newI][newJ].piece.color == "White") { //making sure we are the ones making the move and not the opponent
             //are we in check?
             for (let i = 1; i < cloneBoard.Squares.length; i++) {
