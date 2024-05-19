@@ -10,4 +10,4 @@ Simple Chess HTML page
 - For Ubuntu Touch (UBPorts): https://open-store.io/app/utchess.symbuzzer
 - For Android devices: Tap [Play](https://symbuzzer.github.io/Chess/) and open via Chrome. In Chrome options you will see Install option.
 - For iOS devices: Tap [Play](https://symbuzzer.github.io/Chess/) and open via Safari. In Safari, press Share button and Add to Home Screen after.
-- You can always run it via browser too. Just tap [Play](https://symbuzzer.github.io/Chess/)
+- You can always run it on mobile devices via browser too. Just tap [Play](https://symbuzzer.github.io/Chess/)
