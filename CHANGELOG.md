@@ -1,3 +1,7 @@
+## v1.1.5
+- Fixed a bug that caused the computer to countercheck without taking the player's king to the safe area when the player was checked. (Attempt 2)  
+- Removed wsindex.html and wsstyles.css for further fixes for widescreen devices  
+  
 ## v1.1.4
 - Fixed a bug that caused the computer to countercheck without taking the player's king to the safe area when the player was checked.  
 - Added wsindex.html and wsstyles.css for further fixes for widescreen devices  
