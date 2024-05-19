@@ -69,14 +69,18 @@ function MAXIMIZE(B, depth, alpha, beta) {
         cloneBoard.Squares[newI][newJ].piece.j = newJ;
         cloneBoard.Squares[newI][newJ].piece.moved = true;
 
+        // Eğer bu hamle sonrasında beyaz şah hala şah çekilmişse, hamleyi geçersiz kıl
         if (!isKingInCheck(cloneBoard, "White")) {
             let result = MINIMIZE(cloneBoard, depth - 1, alpha, beta);
-            if (result.utility >= maximizeUtility) {
+            if (result.utility > maximizeUtility) {
+                possibilities[i].utility = result.utility;
+                bestMoves = [possibilities[i]];
+                maximizeUtility = result.utility;
+            } else if (result.utility == maximizeUtility) {
                 possibilities[i].utility = result.utility;
                 bestMoves.push(possibilities[i]);
-                maximizeUtility = result.utility;
             }
-            if (alpha > result.utility) {
+            if (alpha < result.utility) {
                 alpha = result.utility;
             }
             if (beta <= alpha) {
@@ -85,20 +89,9 @@ function MAXIMIZE(B, depth, alpha, beta) {
         }
     }
 
-    let max = -999999;
-    for (let i = 0; i < bestMoves.length; i++) {
-        if (bestMoves[i].utility > max) {
-            max = bestMoves[i].utility;
-        }
-    }
-
-    let i = 0;
-    while (i < bestMoves.length) {
-        if (bestMoves[i].utility < max) {
-            bestMoves.splice(i, 1);
-        } else {
-            i++;
-        }
+    if (bestMoves.length === 0) {
+        // Eğer şah çekildiyse ve geçerli hamle yoksa, mat durumu
+        return new optimalMoveObj(-999999, undefined);
     }
 
     let rand = bestMoves[Math.floor(Math.random() * bestMoves.length)];
@@ -124,18 +117,23 @@ function MINIMIZE(B, depth, alpha, beta) {
 
         cloneBoard.Squares[newI][newJ].piece = cloneBoard.Squares[oldI][oldJ].piece;
         cloneBoard.Squares[oldI][oldJ].piece = undefined;
+
         cloneBoard.Squares[newI][newJ].piece.i = newI;
         cloneBoard.Squares[newI][newJ].piece.j = newJ;
         cloneBoard.Squares[newI][newJ].piece.moved = true;
 
+        // Eğer bu hamle sonrasında siyah şah hala şah çekilmişse, hamleyi geçersiz kıl
         if (!isKingInCheck(cloneBoard, "Black")) {
             let result = MAXIMIZE(cloneBoard, depth - 1, alpha, beta);
-            if (result.utility <= minimizeUtility) {
+            if (result.utility < minimizeUtility) {
+                possibilities[i].utility = result.utility;
+                bestMoves = [possibilities[i]];
+                minimizeUtility = result.utility;
+            } else if (result.utility == minimizeUtility) {
                 possibilities[i].utility = result.utility;
                 bestMoves.push(possibilities[i]);
-                minimizeUtility = result.utility;
             }
-            if (beta < result.utility) {
+            if (beta > result.utility) {
                 beta = result.utility;
             }
             if (beta <= alpha) {
@@ -144,20 +142,9 @@ function MINIMIZE(B, depth, alpha, beta) {
         }
     }
 
-    let min = 999999;
-    for (let i = 0; i < bestMoves.length; i++) {
-        if (bestMoves[i].utility < min) {
-            min = bestMoves[i].utility;
-        }
-    }
-
-    let i = 0;
-    while (i < bestMoves.length) {
-        if (bestMoves[i].utility > min) {
-            bestMoves.splice(i, 1);
-        } else {
-            i++;
-        }
+    if (bestMoves.length === 0) {
+        // Eğer şah çekildiyse ve geçerli hamle yoksa, mat durumu
+        return new optimalMoveObj(999999, undefined);
     }
 
     let rand = bestMoves[Math.floor(Math.random() * bestMoves.length)];
